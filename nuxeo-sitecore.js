@@ -1,28 +1,18 @@
-import { LitElement, css, html } from "lit-element";
+import { PolymerElement, html } from '@polymer/polymer/polymer-element';
 import "@nuxeo/nuxeo-elements/nuxeo-connection";
 import "@nuxeo/nuxeo-elements/nuxeo-page-provider";
 import "@nuxeo/nuxeo-ui-elements/nuxeo-data-table/iron-data-table";
 
-class NuxeoSitecore extends LitElement {
-  constructor() {
-    super();
-    this.selectedItems = [];
-  }
+class NuxeoSitecore extends PolymerElement {
   static get properties() {
     return {
       selectedItems: {
-        type: Object
+        type: Array,
+        value: []
       }
     };
   }
-  static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
-    `;
-  }
-  render() {
+  static get template() {
     return html`
       <nuxeo-connection
         id="nx_connection"
@@ -51,7 +41,7 @@ class NuxeoSitecore extends LitElement {
         max-items="15"
         paginable
         multi-selection
-        @selected=${(e) => this._select(e)}
+        selected-items={{selectedItems}}
       >
         <nuxeo-data-table-column name="Title" flex="100">
           <template>
@@ -59,11 +49,8 @@ class NuxeoSitecore extends LitElement {
           </template>
         </nuxeo-data-table-column>
       </nuxeo-data-table>
-      <button @click="${this._action}">Action</button>
+      <button onclick="[[_action]]">Action</button>
     `;
-  }
-  _select(e){
-    this.selectedItems.push(e);
   }
   _action(e) {
     console.log(this.selectedItems);
