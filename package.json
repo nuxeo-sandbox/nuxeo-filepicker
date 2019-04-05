@@ -18,8 +18,6 @@
   "homepage": "https://github.com/nuxeo-sandbox/nuxeo-sitecore#readme",
   "dependencies": {
     "@morbidick/lit-element-notify": "^1.0.1",
-    "@nuxeo/nuxeo-elements": "^3.0.0-SNAPSHOT",
-    "@nuxeo/nuxeo-ui-elements": "^3.0.0-SNAPSHOT",
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/iron-list": "^3.0.2",
     "@polymer/iron-resizable-behavior": "^3.0.1",
@@ -33,5 +31,10 @@
     "@webcomponents/webcomponentsjs": "2.2.7",
     "lit-element": "^2.1.0",
     "polymer-cli": "^1.9.8"
-  }
+  },
+  "//": [
+    "nuxeo dev",
+    "@nuxeo/nuxeo-elements: ^3.0.0-SNAPSHOT",
+    "@nuxeo/nuxeo-ui-elements: ^3.0.0-SNAPSHOT"
+  ]
 }
