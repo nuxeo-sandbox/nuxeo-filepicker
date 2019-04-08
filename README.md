@@ -7,6 +7,8 @@ This is a Nuxeo sample to:
 
 To test it:
 
+(Node: v11.9.0 - NPM: v6.9.0)
+
 - Run a local Nuxeo server (if it's elsewhere, you can change the url in `nuxeo-sitecore.js`)
 - Run `npm install` in this repository
 - Copy and replace the content of `node_modules` by the content of `nuxeo-deps.zip/nuxeo-deps`
