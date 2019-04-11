@@ -7,6 +7,7 @@ class MyApp extends LitElement {
     <nuxeo-sitecore
       username="Administrator"
       password="Administrator"
+      page-provider="default_document_suggestion"
       url="http://localhost:8080/nuxeo"
       @sitecore-select="${this._callback}">
     </nuxeo-sitecore>

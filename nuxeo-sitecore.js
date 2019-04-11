@@ -11,6 +11,7 @@ class NuxeoSitecore extends LitElement {
     this.url = 'http://localhost:8080/nuxeo';
     this.username = 'Administrator';
     this.password = 'Administrator';
+    this['page-provider'] = 'default_document_suggestion';
   }
   static get properties() {
     return {
@@ -24,6 +25,9 @@ class NuxeoSitecore extends LitElement {
         type: String
       },
       password: {
+        type: String
+      },
+      'page-provider': {
         type: String
       }
     };
@@ -56,7 +60,7 @@ class NuxeoSitecore extends LitElement {
         page-size="20"
         schemas="dublincore, file"
         params='{"queryParams": ""}'
-        provider="default_document_suggestion"
+        provider="${this['page-provider']}"
         headers='{"X-NXfetch.document": "properties"}'
       >
       </nuxeo-page-provider>
@@ -91,8 +95,6 @@ class NuxeoSitecore extends LitElement {
       }
     });
     this.dispatchEvent(event);
-    console.log('Selected items from within nuxeo-sitecore element:') 
-    console.log(this.selectedItems);
   }
 }
 
