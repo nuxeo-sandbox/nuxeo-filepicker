@@ -7,11 +7,12 @@ import "@polymer/paper-button/paper-button";
 class NuxeoSitecore extends LitElement {
   constructor() {
     super();
-    this.selectedItems = [];
+    this.selectedItems = {};
     this.url = 'http://localhost:8080/nuxeo';
     this.username = 'Administrator';
     this.password = 'Administrator';
     this['page-provider'] = 'default_document_suggestion';
+    this.results = [];
   }
   static get properties() {
     return {
@@ -29,19 +30,11 @@ class NuxeoSitecore extends LitElement {
       },
       'page-provider': {
         type: String
-      }
+      },
+      results: {
+        type: Array
+      },
     };
-  }
-  static get styles() {
-    return css`
-      :host {
-        display: block;
-        nuxeo-data-table {
-          height: calc(100vh - 222px);
-          overflow: hidden;
-        }
-      }
-    `;
   }
   render() {
     return html`
@@ -56,7 +49,6 @@ class NuxeoSitecore extends LitElement {
       <nuxeo-page-provider
         id="provider"
         enrichers="renditions, documentURL"
-        auto
         page-size="20"
         schemas="dublincore, file"
         params='{"queryParams": ""}'
@@ -65,31 +57,46 @@ class NuxeoSitecore extends LitElement {
       >
       </nuxeo-page-provider>
 
-      <nuxeo-data-table
-        id="datatable"
-        nx-provider="provider"
+      ${this.results.map((doc) => html`
+        <h2>${doc.title}</h2>
+        <nuxeo-data-table
+        name=${doc.uid}
+        items="${JSON.stringify(doc.contextParameters.renditions)}"
         selection-enabled
         max-items="15"
         paginable
         multi-selection
-        @selected-items-changed=${e => this._select(e)}
+        @selected-items-changed=${e => this._selectRenditions(e)}
       >
         <nuxeo-data-table-column name="Title" flex="100">
           <template>
-            [[item.title]]
+            [[item.name]]
           </template>
         </nuxeo-data-table-column>
       </nuxeo-data-table>
-      <paper-button @click="${this._action}">Action</paper-button>
+      `)}
+      <div>
+        <paper-button raised @click="${this._fetch}">Fetch</paper-button>
+        <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
+      </div>
     `;
   }
-  _select(event) {
-    if (event.detail.value && Array.isArray(event.detail.value)) {
-      this.selectedItems = event.detail.value;
+
+  _selectRenditions(event) {
+    if (event.detail.value && event.detail.value.length !== 0 && event.detail.value.indexSplices) {
+      this.selectedItems[event.currentTarget.name] = event.detail.value.indexSplices[0].object;
     }
   }
-  _action(e) {
-    let event = new CustomEvent('sitecore-select', {
+
+  _fetch() {
+    this.shadowRoot.getElementById('provider').fetch().then((response) => {
+      this.results = response.entries;
+      this.requestUpdate();
+    });
+  }
+
+  _displayRenditions(e) {
+    let event = new CustomEvent('sitecore-select-renditions', {
       detail: {
         selectedItems: this.selectedItems
       }
