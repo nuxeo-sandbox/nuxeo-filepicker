@@ -9,13 +9,20 @@ class MyApp extends LitElement {
       password="Administrator"
       page-provider="default_document_suggestion"
       url="http://localhost:8080/nuxeo"
-      @sitecore-select="${this._callback}">
+      @sitecore-select-renditions="${this._callbackRenditions}">
     </nuxeo-sitecore>
     `;
   }
-  _callback(event) {
-    console.log('Selected items outside nuxeo-sitecore element:');
+
+  _callbackRenditions(event) {
+    console.log('Selected renditions outside nuxeo-sitecore element:');
     console.log(event.detail.selectedItems);
+    console.log('URLs for all renditions:');
+    Object.values(event.detail.selectedItems).forEach((renditions) => {
+      renditions.forEach((rendition) => {
+        console.log(rendition.url);
+      })
+    });
   }
 }
 
