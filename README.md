@@ -9,6 +9,7 @@ To test it:
 
 (Node: v11.9.0 - NPM: v6.9.0)
 
+- Install `nuxeo-dam` -> `./nuxeoctl mp-install nuxeo-dam`.
 - In a local nuxeo server, go to `nxserver/config`, create a file `cors-config.xml` and add the following xml within: 
 
 ```
