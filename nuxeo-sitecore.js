@@ -51,7 +51,6 @@ class NuxeoSitecore extends LitElement {
         enrichers="renditions, documentURL"
         page-size="20"
         schemas="dublincore, file"
-        params='{"queryParams": ""}'
         provider="${this['page-provider']}"
         headers='{"X-NXfetch.document": "properties"}'
       >
