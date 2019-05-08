@@ -65,7 +65,7 @@ class NuxeoSitecore extends LitElement {
         page-size="20"
         schemas="dublincore, file"
         provider="${this['page-provider-asset']}"
-        headers='{"X-NXfetch.document": "properties"}'
+        headers='{"X-NXfetch.document": "properties", "enrichers.document": "children"}'
       >
       </nuxeo-page-provider>
 
@@ -79,7 +79,8 @@ class NuxeoSitecore extends LitElement {
       >
       </nuxeo-page-provider>
       ${this.displaySearch? 
-        html`Suggestion text here soon!`:
+        html`<paper-input @keypress="${this._search}" always-float-label label="Full Text" placeholder="Search for something...">
+        </paper-input>`:
         html``
       }
       ${this.results.map((doc) => html`
@@ -119,14 +120,15 @@ class NuxeoSitecore extends LitElement {
   }
 
   _fetchAsset() {
+    this.displaySearch = true;
     this.shadowRoot.getElementById('provider-asset').fetch().then((response) => {
       this.results = response.entries;
-      this.displaySearch = true;
       this.requestUpdate();
     });
   }
 
   _fetchRootChildren() {
+    this.displaySearch = false;
     var root = this.shadowRoot.getElementById('root');
     root.get().then((response) => {
       var provider = this.shadowRoot.getElementById('provider');
@@ -159,6 +161,21 @@ class NuxeoSitecore extends LitElement {
       }
     });
     this.dispatchEvent(event);
+  }
+
+  _search(e) {
+    if (e.keyCode == 13) {
+      var value = e.currentTarget.value;
+      var provider = this.shadowRoot.getElementById('provider-asset');
+      provider.params = {
+        ecm_fulltext: value
+      }
+      provider.fetch().then((response) => {
+        this.results = response.entries;
+        this.displaySearch = true;
+        this.requestUpdate();
+      });
+    }
   }
 }
 
