@@ -7,7 +7,8 @@ class MyApp extends LitElement {
     <nuxeo-sitecore
       username="Administrator"
       password="Administrator"
-      page-provider="assets_search"
+      page-provider-asset="assets_search"
+      page-provider="tree_children"
       url="http://localhost:8080/nuxeo"
       @sitecore-select-renditions="${this._callbackRenditions}">
     </nuxeo-sitecore>
