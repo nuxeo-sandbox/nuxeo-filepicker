@@ -1,15 +1,11 @@
 ## Nuxeo Filepicker Sample
 
-This is a Nuxeo sample to:
-- List Nuxeo documents
-- Select them
-- Click on a button to print the selected documents in the console
+This is a Nuxeo sample to browse documents and select their renditions
 
 To test it:
 
 (Node: v11.9.0 - NPM: v6.9.0)
 
-- Install `nuxeo-dam` -> `./nuxeoctl mp-install nuxeo-dam`.
 - In a local nuxeo server, go to `nxserver/config`, create a file `cors-config.xml` and add the following xml within: 
 
 ```
