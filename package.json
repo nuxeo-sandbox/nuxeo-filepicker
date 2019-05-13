@@ -1,21 +1,21 @@
 {
-  "name": "nuxeo-sitecore",
+  "name": "nuxeo-filepicker",
   "version": "1.0.0",
-  "description": "Nuxeo Sitecore",
+  "description": "Nuxeo Filepicker",
   "main": "index.html",
   "scripts": {
     "serve": "polymer serve --open"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuxeo-sandbox/nuxeo-sitecore.git"
+    "url": "git+https://github.com/nuxeo-sandbox/nuxeo-filepicker.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nuxeo-sandbox/nuxeo-sitecore/issues"
+    "url": "https://github.com/nuxeo-sandbox/nuxeo-filepicker/issues"
   },
-  "homepage": "https://github.com/nuxeo-sandbox/nuxeo-sitecore#readme",
+  "homepage": "https://github.com/nuxeo-sandbox/nuxeo-filepicker#readme",
   "dependencies": {
     "@morbidick/lit-element-notify": "^1.0.1",
     "@polymer/iron-icons": "^3.0.1",

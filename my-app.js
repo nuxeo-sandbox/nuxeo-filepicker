@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit-element";
-import "./nuxeo-sitecore";
+import "./nuxeo-filepicker";
 
 class MyApp extends LitElement {
   constructor() {
@@ -17,18 +17,18 @@ class MyApp extends LitElement {
 
   render() {
     return html`
-    <nuxeo-sitecore
+    <nuxeo-filepicker
       username="Administrator"
       password="Administrator"
       page-provider="${this["page-provider"]}"
       url="${this.url}"
-      @sitecore-select-renditions="${this._callbackRenditions}">
-    </nuxeo-sitecore>
+      @filepicker-select-renditions="${this._callbackRenditions}">
+    </nuxeo-filepicker>
     `;
   }
 
   _callbackRenditions(event) {
-    console.log('Selected renditions outside nuxeo-sitecore element:');
+    console.log('Selected renditions outside nuxeo-filepicker element:');
     console.log(event.detail.selectedItems);
     console.log('URLs for all renditions:');
     Object.values(event.detail.selectedItems).forEach((renditions) => {

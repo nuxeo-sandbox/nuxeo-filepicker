@@ -4,7 +4,7 @@ import "@nuxeo/nuxeo-elements/nuxeo-page-provider";
 import "@nuxeo/nuxeo-ui-elements/nuxeo-data-table/iron-data-table";
 import "@polymer/paper-button/paper-button";
 
-class NuxeoSitecore extends LitElement {
+class NuxeoFilepicker extends LitElement {
   constructor() {
     super();
     this.selectedItems = {};
@@ -191,7 +191,7 @@ class NuxeoSitecore extends LitElement {
   }
 
   _displayRenditions(e) {
-    let event = new CustomEvent("sitecore-select-renditions", {
+    let event = new CustomEvent("filepicker-select-renditions", {
       detail: {
         selectedItems: this.selectedItems
       }
@@ -230,4 +230,4 @@ class NuxeoSitecore extends LitElement {
   }
 }
 
-customElements.define("nuxeo-sitecore", NuxeoSitecore);
+customElements.define("nuxeo-filepicker", NuxeoFilepicker);

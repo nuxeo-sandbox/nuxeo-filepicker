@@ -1,4 +1,4 @@
-## Nuxeo Sitecore Sample
+## Nuxeo Filepicker Sample
 
 This is a Nuxeo sample to:
 - List Nuxeo documents
@@ -13,7 +13,7 @@ To test it:
 - In a local nuxeo server, go to `nxserver/config`, create a file `cors-config.xml` and add the following xml within: 
 
 ```
-<component name="org.nuxeo.ecm.platform.ui.web.sitecore.cors">
+<component name="org.nuxeo.ecm.platform.ui.web.filepicker.cors">
 <extension target="org.nuxeo.ecm.platform.web.common.requestcontroller.service.RequestControllerService" point="corsConfig">
     <corsConfig name="foobar" supportedMethods ="GET,POST,HEAD,OPTIONS,DELETE,PUT">
       <pattern>/nuxeo/.*</pattern>
@@ -22,7 +22,7 @@ To test it:
 </component>
 ```
 
-- Run a local Nuxeo server (if it's elsewhere, you can change the url in `nuxeo-sitecore.js`)
+- Run a local Nuxeo server (if it's elsewhere, you can change the url in `nuxeo-filepicker.js`)
 - Run `npm install` in this repository
 - Add the content of `nuxeo-deps.zip/nuxeo-deps` in `node_modules` (replace all files existing already)
 - Run `npm run serve` 
