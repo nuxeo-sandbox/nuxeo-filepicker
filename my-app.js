@@ -2,14 +2,26 @@ import { LitElement, html } from "lit-element";
 import "./nuxeo-sitecore";
 
 class MyApp extends LitElement {
+  constructor() {
+    super();
+    this.url = "http://localhost:8080/nuxeo";
+    this["page-provider"] = "advanced_document_content";
+  }
+
+  static get properties() {
+    return {
+      url: String,
+      pageProvider: String
+    }
+  }
+
   render() {
     return html`
     <nuxeo-sitecore
       username="Administrator"
       password="Administrator"
-      page-provider-asset="assets_search"
-      page-provider="tree_children"
-      url="http://localhost:8080/nuxeo"
+      page-provider="${this["page-provider"]}"
+      url="${this.url}"
       @sitecore-select-renditions="${this._callbackRenditions}">
     </nuxeo-sitecore>
     `;

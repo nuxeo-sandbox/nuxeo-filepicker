@@ -8,13 +8,11 @@ class NuxeoSitecore extends LitElement {
   constructor() {
     super();
     this.selectedItems = {};
-    this.url = 'http://localhost:8080/nuxeo';
-    this.username = 'Administrator';
-    this.password = 'Administrator';
-    this['page-provider'] = 'default_document_suggestion';
-    this['page-provider'] = 'assets_search';
+    this.url = "http://localhost:8080/nuxeo";
+    this.username = "Administrator";
+    this.password = "Administrator";
+    this["page-provider"] = "advanced_document_content";
     this.results = [];
-    this.displaySearch = false;
   }
   static get properties() {
     return {
@@ -30,83 +28,82 @@ class NuxeoSitecore extends LitElement {
       password: {
         type: String
       },
-      'page-provider': {
-        type: String
-      },
-      'page-provider-asset': {
+      "page-provider": {
         type: String
       },
       results: {
         type: Array
-      },
-      displaySearch: {
-        type: Boolean
-      },
+      }
     };
   }
   render() {
     return html`
-      <nuxeo-connection
-        id="nx_connection"
-        url="${this.url}"
-        username="${this.username}"
-        password="${this.password}"
-      >
+      <nuxeo-connection id="nx_connection" url="${this.url}" username="${this.username}" password="${this.password}">
       </nuxeo-connection>
 
-      <nuxeo-resource
-        id="root"
-        path="/path//">
-      </nuxeo-resource>
-
-      <nuxeo-page-provider
-        id="provider-asset"
-        enrichers="renditions, documentURL"
-        page-size="20"
-        schemas="dublincore, file"
-        provider="${this['page-provider-asset']}"
-        headers='{"X-NXfetch.document": "properties", "enrichers.document": "children"}'
-      >
-      </nuxeo-page-provider>
+      <nuxeo-resource id="fetchDocument" enrichers="renditions, documentURL, breadcrumb"> </nuxeo-resource>
 
       <nuxeo-page-provider
         id="provider"
-        enrichers="renditions, documentURL"
+        enrichers="renditions, documentURL, breadcrumb"
         page-size="20"
         schemas="dublincore, file"
-        provider="${this['page-provider']}"
+        provider="${this["page-provider"]}"
         headers='{"X-NXfetch.document": "properties", "enrichers.document": "children"}'
       >
       </nuxeo-page-provider>
-      ${this.displaySearch? 
-        html`<paper-input @keypress="${this._search}" always-float-label label="Full Text" placeholder="Search for something...">
-        </paper-input>`:
-        html``
-      }
-      ${this.results.map((doc) => html`
-        <h2>${doc.title}</h2>
-        ${doc.contextParameters.children.entries.length > 0? 
-          html`<paper-button id="${doc.uid}" raised @click="${this._fetchChildren}">Browse</paper-button>`:
-          html``
-        }
-        <nuxeo-data-table
-          name=${doc.uid}
-          items="${JSON.stringify(doc.contextParameters.renditions)}"
-          selection-enabled
-          max-items="15"
-          paginable
-          multi-selection
-          @selected-items-changed=${e => this._selectRenditions(e)}
-        >
-        <nuxeo-data-table-column name="Title" flex="100">
-          <template>
-            [[item.name]]
-          </template>
-        </nuxeo-data-table-column>
-      </nuxeo-data-table>
-      `)}
+
+      <paper-input
+        id="search_input"
+        @keypress="${this._search}"
+        always-float-label
+        label="Full Text"
+        placeholder="Search for something..."
+      >
+      </paper-input>
+
+      <paper-button raised @click="${this._search}">Search</paper-button>
+
       <div>
-        <paper-button raised @click="${this._fetchAsset}">Fetch Asset</paper-button>
+        ${this._breadcrumb().map(
+          item =>
+            html`
+              <span>
+                <span>&gt;</span>
+                <a href="#" document="${JSON.stringify(item)}" @click="${this._fetchChildren}">
+                  <span>${item.title}</span>
+                </a>
+              </span>
+            `
+        )}
+      </div>
+
+      ${this.results.map(
+        doc => html`
+          <h2>${doc.title}</h2>
+          ${doc.contextParameters.children.entries.length > 0
+            ? html`
+                <paper-button document=${JSON.stringify(doc)} raised @click="${this._fetchChildren}">Browse</paper-button>
+              `
+            : html``}
+          <nuxeo-data-table
+            name=${doc.uid}
+            items="${JSON.stringify(doc.contextParameters.renditions)}"
+            selection-enabled
+            max-items="15"
+            paginable
+            multi-selection
+            @selected-items-changed=${e => this._selectRenditions(e)}
+          >
+            <nuxeo-data-table-column name="Title" flex="100">
+              <template>
+                [[item.name]]
+              </template>
+            </nuxeo-data-table-column>
+          </nuxeo-data-table>
+        `
+      )}
+      <div>
         <paper-button raised @click="${this._fetchRootChildren}">Browse</paper-button>
         <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
       </div>
@@ -119,43 +116,48 @@ class NuxeoSitecore extends LitElement {
     }
   }
 
-  _fetchAsset() {
-    this.displaySearch = true;
-    this.shadowRoot.getElementById('provider-asset').fetch().then((response) => {
-      this.results = response.entries;
-      this.requestUpdate();
-    });
+  _breadcrumb() {
+    if (this.currentDocument) {
+      return this.currentDocument.contextParameters.breadcrumb.entries;
+    }
+    return [];
   }
 
   _fetchRootChildren() {
-    this.displaySearch = false;
-    var root = this.shadowRoot.getElementById('root');
-    root.get().then((response) => {
-      var provider = this.shadowRoot.getElementById('provider');
+    var root = this.shadowRoot.getElementById("fetchDocument");
+    root.path = '/path//';
+    root.get().then(rootDocument => {
+      var provider = this.shadowRoot.getElementById("provider");
       provider.params = {
-        queryParams: response.uid,
-      }
-      provider.fetch().then((response) => {
+        ecm_parentId: rootDocument.uid
+      };
+      provider.fetch().then(response => {
         this.results = response.entries;
+        this.currentDocument = rootDocument;
         this.requestUpdate();
       });
     });
   }
 
   _fetchChildren(e) {
-    var parentId = e.currentTarget.id;
-    var provider = this.shadowRoot.getElementById('provider');
-    provider.params = {
-      queryParams: parentId,
-    }
-    provider.fetch().then((response) => {
-      this.results = response.entries;
-      this.requestUpdate();
+    var document = JSON.parse(e.currentTarget.getAttribute('document'));
+    var fetchDocument = this.shadowRoot.getElementById("fetchDocument");
+    fetchDocument.path = `/path${document.path}`;
+    fetchDocument.get().then(currentDocument => {
+      var provider = this.shadowRoot.getElementById("provider");
+      provider.params = {
+        ecm_parentId: currentDocument.uid
+      };
+      provider.fetch().then(response => {
+        this.results = response.entries;
+        this.currentDocument = currentDocument;
+        this.requestUpdate();
+      });
     });
   }
 
   _displayRenditions(e) {
-    let event = new CustomEvent('sitecore-select-renditions', {
+    let event = new CustomEvent("sitecore-select-renditions", {
       detail: {
         selectedItems: this.selectedItems
       }
@@ -164,15 +166,14 @@ class NuxeoSitecore extends LitElement {
   }
 
   _search(e) {
-    if (e.keyCode == 13) {
-      var value = e.currentTarget.value;
-      var provider = this.shadowRoot.getElementById('provider-asset');
+    if (e.keyCode == 13 || e.type === "click") {
+      var provider = this.shadowRoot.getElementById("provider");
+      var value = this.shadowRoot.getElementById("search_input").value;
       provider.params = {
-        ecm_fulltext: value
-      }
-      provider.fetch().then((response) => {
+        title: value
+      };
+      provider.fetch().then(response => {
         this.results = response.entries;
-        this.displaySearch = true;
         this.requestUpdate();
       });
     }
