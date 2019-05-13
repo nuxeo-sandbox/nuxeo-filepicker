@@ -13,6 +13,8 @@ class NuxeoSitecore extends LitElement {
     this.password = "Administrator";
     this["page-provider"] = "advanced_document_content";
     this.results = [];
+    this.offset = 0;
+    this.pageSize = 20;
   }
   static get properties() {
     return {
@@ -33,6 +35,18 @@ class NuxeoSitecore extends LitElement {
       },
       results: {
         type: Array
+      },
+      offset: {
+        type: Number
+      },
+      pageSize: {
+        type: Number
+      },
+      isPreviousPageAvailable: {
+        type: Boolean
+      },
+      isNextPageAvailable: {
+        type: Boolean
       }
     };
   }
@@ -46,7 +60,7 @@ class NuxeoSitecore extends LitElement {
       <nuxeo-page-provider
         id="provider"
         enrichers="renditions, documentURL, breadcrumb"
-        page-size="20"
+        page-size="${this.pageSize}"
         schemas="dublincore, file"
         provider="${this["page-provider"]}"
         headers='{"X-NXfetch.document": "properties", "enrichers.document": "children"}'
@@ -70,7 +84,7 @@ class NuxeoSitecore extends LitElement {
             html`
               <span>
                 <span>&gt;</span>
-                <a href="#" document="${JSON.stringify(item)}" @click="${this._fetchChildren}">
+                <a href="javascript:undefined" document="${JSON.stringify(item)}" @click="${this._fetchChildren}">
                   <span>${item.title}</span>
                 </a>
               </span>
@@ -83,7 +97,9 @@ class NuxeoSitecore extends LitElement {
           <h2>${doc.title}</h2>
           ${doc.contextParameters.children.entries.length > 0
             ? html`
-                <paper-button document=${JSON.stringify(doc)} raised @click="${this._fetchChildren}">Browse</paper-button>
+                <paper-button document="${JSON.stringify(doc)}" raised @click="${this._fetchChildren}"
+                  >Browse</paper-button
+                >
               `
             : html``}
           <nuxeo-data-table
@@ -103,6 +119,21 @@ class NuxeoSitecore extends LitElement {
           </nuxeo-data-table>
         `
       )}
+      ${this.isPreviousPageAvailable
+        ? html`
+            <a href="javascript:undefined" @click="${this._previous}">
+              <iron-icon icon="icons:chevron-left" />
+            </a>
+          `
+        : html``}
+      ${this.numberOfPages} pages
+      ${this.isNextPageAvailable
+        ? html`
+            <a href="javascript:undefined" @click="${this._next}">
+              <iron-icon icon="icons:chevron-right" />
+            </a>
+          `
+        : html``}
       <div>
         <paper-button raised @click="${this._fetchRootChildren}">Browse</paper-button>
         <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
@@ -110,49 +141,52 @@ class NuxeoSitecore extends LitElement {
     `;
   }
 
-  _selectRenditions(event) {
-    if (event.detail.value && event.detail.value.length !== 0 && event.detail.value.indexSplices) {
-      this.selectedItems[event.currentTarget.name] = event.detail.value.indexSplices[0].object;
-    }
+  _previous() {
+    this.offset = this.offset - this.pageSize;
+    this._fetchPage(this.currentDocument);
   }
 
-  _breadcrumb() {
-    if (this.currentDocument) {
-      return this.currentDocument.contextParameters.breadcrumb.entries;
-    }
-    return [];
+  _next() {
+    this.offset = this.offset + this.pageSize;
+    this._fetchPage(this.currentDocument);
+  }
+
+  _fillProps(response) {
+    this.isPreviousPageAvailable = response.isPreviousPageAvailable;
+    this.offset = response.currentPageOffset;
+    this.pageSize = response.pageSize;
+    this.numberOfPages = response.numberOfPages;
+    this.isNextPageAvailable = response.isNextPageAvailable;
+  }
+
+  _fetchPage(currentDocument) {
+    var provider = this.shadowRoot.getElementById("provider");
+    provider.offset = this.offset;
+    provider.params = {
+      ecm_parentId: currentDocument.uid
+    };
+    provider.fetch().then(response => {
+      this._fillProps(response);
+      this.results = response.entries;
+      this.currentDocument = currentDocument;
+      this.requestUpdate();
+    });
   }
 
   _fetchRootChildren() {
     var root = this.shadowRoot.getElementById("fetchDocument");
-    root.path = '/path//';
+    root.path = "/path//";
     root.get().then(rootDocument => {
-      var provider = this.shadowRoot.getElementById("provider");
-      provider.params = {
-        ecm_parentId: rootDocument.uid
-      };
-      provider.fetch().then(response => {
-        this.results = response.entries;
-        this.currentDocument = rootDocument;
-        this.requestUpdate();
-      });
+      this._fetchPage(rootDocument);
     });
   }
 
   _fetchChildren(e) {
-    var document = JSON.parse(e.currentTarget.getAttribute('document'));
+    var document = JSON.parse(e.currentTarget.getAttribute("document"));
     var fetchDocument = this.shadowRoot.getElementById("fetchDocument");
     fetchDocument.path = `/path${document.path}`;
     fetchDocument.get().then(currentDocument => {
-      var provider = this.shadowRoot.getElementById("provider");
-      provider.params = {
-        ecm_parentId: currentDocument.uid
-      };
-      provider.fetch().then(response => {
-        this.results = response.entries;
-        this.currentDocument = currentDocument;
-        this.requestUpdate();
-      });
+      this._fetchPage(currentDocument);
     });
   }
 
@@ -167,8 +201,11 @@ class NuxeoSitecore extends LitElement {
 
   _search(e) {
     if (e.keyCode == 13 || e.type === "click") {
+      this.currentDocument = undefined;
       var provider = this.shadowRoot.getElementById("provider");
       var value = this.shadowRoot.getElementById("search_input").value;
+      this.pageSize = "-1";
+      this.requestUpdate();
       provider.params = {
         title: value
       };
@@ -177,6 +214,19 @@ class NuxeoSitecore extends LitElement {
         this.requestUpdate();
       });
     }
+  }
+
+  _selectRenditions(event) {
+    if (event.detail.value && event.detail.value.length !== 0 && event.detail.value.indexSplices) {
+      this.selectedItems[event.currentTarget.name] = event.detail.value.indexSplices[0].object;
+    }
+  }
+
+  _breadcrumb() {
+    if (this.currentDocument) {
+      return this.currentDocument.contextParameters.breadcrumb.entries;
+    }
+    return [];
   }
 }
 
