@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit-element";
+import { LitElement, html } from "lit-element";
 import "@nuxeo/nuxeo-elements/nuxeo-connection";
 import "@nuxeo/nuxeo-elements/nuxeo-page-provider";
 import "@nuxeo/nuxeo-ui-elements/nuxeo-data-table/iron-data-table";
@@ -52,6 +52,7 @@ class NuxeoFilepicker extends LitElement {
   }
   render() {
     return html`
+      <link rel="stylesheet" href="./nuxeo-filepicker.css" />
       <nuxeo-connection id="nx_connection" url="${this.url}" username="${this.username}" password="${this.password}">
       </nuxeo-connection>
 
@@ -66,19 +67,22 @@ class NuxeoFilepicker extends LitElement {
         headers='{"X-NXfetch.document": "properties", "enrichers.document": "children"}'
       >
       </nuxeo-page-provider>
+      <div class="header">
+        <paper-input
+          id="search_input"
+          @keypress="${this._search}"
+          always-float-label
+          label="Full Text"
+          placeholder="Search for something..."
+        >
+        </paper-input>
 
-      <paper-input
-        id="search_input"
-        @keypress="${this._search}"
-        always-float-label
-        label="Full Text"
-        placeholder="Search for something..."
-      >
-      </paper-input>
+        <paper-button raised @click="${this._search}">Search</paper-button>
+        <paper-button raised @click="${this._fetchRootChildren}">Browse</paper-button>
+        <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
+      </div>
 
-      <paper-button raised @click="${this._search}">Search</paper-button>
-
-      <div>
+      <div class="breadcrumb">
         ${this._breadcrumb().map(
           item =>
             html`
@@ -92,48 +96,64 @@ class NuxeoFilepicker extends LitElement {
         )}
       </div>
 
-      ${this.results.map(
-        doc => html`
-          <h2>${doc.title}</h2>
-          ${doc.contextParameters.children.entries.length > 0
-            ? html`
-                <paper-button document="${JSON.stringify(doc)}" raised @click="${this._fetchChildren}"
-                  >Browse</paper-button
-                >
-              `
-            : html``}
-          <nuxeo-data-table
-            name=${doc.uid}
-            items="${JSON.stringify(doc.contextParameters.renditions)}"
-            selection-enabled
-            max-items="15"
-            paginable
-            multi-selection
-            @selected-items-changed=${e => this._selectRenditions(e)}
-          >
-            <nuxeo-data-table-column name="Title" flex="100">
-              <template>
-                [[item.name]]
-              </template>
-            </nuxeo-data-table-column>
-          </nuxeo-data-table>
-        `
-      )}
-      ${this.isPreviousPageAvailable
-        ? html`
-            <a href="javascript:undefined" @click="${this._previous}">
-              <iron-icon icon="icons:chevron-left" />
-            </a>
+      <div class="documents-container">
+        ${this.results.map(
+          doc => html`
+            <div class="document-container">
+              <div class="thumbnailContainer">
+                <img class="thumbnail" src=${this._thumbnailUrl(doc)} />
+              </div>
+              <div class="renditionContainer">
+                ${doc.contextParameters.children.entries.length > 0
+                  ? html`
+                      <paper-button document="${JSON.stringify(doc)}" raised @click="${this._fetchChildren}"
+                        >Browse</paper-button
+                      >
+                    `
+                  : html``}
+                ${!doc.facets.includes("Folderish")
+                  ? html`
+                      <nuxeo-data-table
+                        name=${doc.uid}
+                        items="${JSON.stringify(doc.contextParameters.renditions)}"
+                        selection-enabled
+                        max-items="15"
+                        paginable
+                        multi-selection
+                        @selected-items-changed=${e => this._selectRenditions(e)}
+                      >
+                        <nuxeo-data-table-column name="${doc.title}">
+                          <template>
+                            [[item.name]]
+                          </template>
+                        </nuxeo-data-table-column>
+                      </nuxeo-data-table>
+                      <paper-button raised @click="${this._displayRenditions}"
+                        >Display Renditions in Console</paper-button
+                      >
+                    `
+                  : html``}
+              </div>
+            </div>
           `
-        : html``}
-      ${this.numberOfPages} pages
-      ${this.isNextPageAvailable
-        ? html`
-            <a href="javascript:undefined" @click="${this._next}">
-              <iron-icon icon="icons:chevron-right" />
-            </a>
-          `
-        : html``}
+        )}
+      </div>
+      <div class="pages">
+        ${this.isPreviousPageAvailable
+          ? html`
+              <a href="javascript:undefined" @click="${this._previous}">
+                <iron-icon icon="icons:chevron-left" />
+              </a>
+            `
+          : html``}
+        ${this.isNextPageAvailable
+          ? html`
+              <a href="javascript:undefined" @click="${this._next}">
+                <iron-icon icon="icons:chevron-right" />
+              </a>
+            `
+          : html``}
+      </div>
       <div>
         <paper-button raised @click="${this._fetchRootChildren}">Browse</paper-button>
         <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
@@ -227,6 +247,13 @@ class NuxeoFilepicker extends LitElement {
       return this.currentDocument.contextParameters.breadcrumb.entries;
     }
     return [];
+  }
+
+  _thumbnailUrl(doc) {
+    if (doc) {
+      const renditionThumbnail = doc.contextParameters.renditions.filter(rendition => rendition.name === "thumbnail");
+      return renditionThumbnail[0].url;
+    }
   }
 }
 
