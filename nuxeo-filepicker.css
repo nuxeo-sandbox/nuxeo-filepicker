@@ -32,8 +32,7 @@
   }
 }
 .thumbnailContainer {
-  width: 100%;
-  height: 10em;
+  display: inline;
 }
 .thumbnail {
   max-width: 100%;
@@ -42,6 +41,7 @@
   display: block;
   border-radius: 10px;
   margin-top: 5px;
+  text-align: center;
 }
 .renditionContainer {
   background-color: white;

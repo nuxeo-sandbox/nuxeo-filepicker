@@ -79,7 +79,7 @@ class NuxeoFilepicker extends LitElement {
 
         <paper-button raised @click="${this._search}">Search</paper-button>
         <paper-button raised @click="${this._fetchRootChildren}">Browse</paper-button>
-        <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
+        <paper-button raised @click="${this._displayRenditions}">Import Selection(s)</paper-button>
       </div>
 
       <div class="breadcrumb">
@@ -102,6 +102,7 @@ class NuxeoFilepicker extends LitElement {
             <div class="document-container">
               <div class="thumbnailContainer">
                 <img class="thumbnail" src=${this._thumbnailUrl(doc)} />
+                <div class="thumbnail">${doc.title}</div>
               </div>
               <div class="renditionContainer">
                 ${doc.contextParameters.children.entries.length > 0
@@ -115,6 +116,7 @@ class NuxeoFilepicker extends LitElement {
                   ? html`
                       <nuxeo-data-table
                         name=${doc.uid}
+                        title=${doc.title}
                         items="${JSON.stringify(doc.contextParameters.renditions)}"
                         selection-enabled
                         max-items="15"
@@ -122,15 +124,13 @@ class NuxeoFilepicker extends LitElement {
                         multi-selection
                         @selected-items-changed=${e => this._selectRenditions(e)}
                       >
-                        <nuxeo-data-table-column name="${doc.title}">
+                        <nuxeo-data-table-column name="">
                           <template>
                             [[item.name]]
                           </template>
                         </nuxeo-data-table-column>
                       </nuxeo-data-table>
-                      <paper-button raised @click="${this._displayRenditions}"
-                        >Display Renditions in Console</paper-button
-                      >
+                      <paper-button raised @click="${this._displayRenditions}">Import Selection(s)</paper-button>
                     `
                   : html``}
               </div>
@@ -156,7 +156,7 @@ class NuxeoFilepicker extends LitElement {
       </div>
       <div>
         <paper-button raised @click="${this._fetchRootChildren}">Browse</paper-button>
-        <paper-button raised @click="${this._displayRenditions}">Display Renditions in Console</paper-button>
+        <paper-button raised @click="${this._displayRenditions}">Import Selection(s)</paper-button>
       </div>
     `;
   }
@@ -238,7 +238,12 @@ class NuxeoFilepicker extends LitElement {
 
   _selectRenditions(event) {
     if (event.detail.value && event.detail.value.length !== 0 && event.detail.value.indexSplices) {
-      this.selectedItems[event.currentTarget.name] = event.detail.value.indexSplices[0].object;
+      var renditions = event.detail.value.indexSplices[0].object;
+      renditions = renditions.map(rendition => {
+        rendition.title = event.currentTarget.title;
+        return rendition;
+      });
+      this.selectedItems[event.currentTarget.name] = renditions;
     }
   }
 
