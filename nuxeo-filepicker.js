@@ -62,7 +62,7 @@ class NuxeoFilepicker extends LitElement {
         id="provider"
         enrichers="renditions, documentURL, breadcrumb"
         page-size="${this.pageSize}"
-        schemas="dublincore, file"
+        schemas="*"
         provider="${this["page-provider"]}"
         headers='{"X-NXfetch.document": "properties", "enrichers.document": "children"}'
       >
@@ -115,8 +115,7 @@ class NuxeoFilepicker extends LitElement {
                 ${!doc.facets.includes("Folderish")
                   ? html`
                       <nuxeo-data-table
-                        name=${doc.uid}
-                        title=${doc.title}
+                        doc="${JSON.stringify(doc)}"
                         items="${JSON.stringify(doc.contextParameters.renditions)}"
                         selection-enabled
                         max-items="15"
@@ -239,11 +238,12 @@ class NuxeoFilepicker extends LitElement {
   _selectRenditions(event) {
     if (event.detail.value && event.detail.value.length !== 0 && event.detail.value.indexSplices) {
       var renditions = event.detail.value.indexSplices[0].object;
+      var doc = JSON.parse(event.currentTarget.attributes.doc.value);
       renditions = renditions.map(rendition => {
-        rendition.title = event.currentTarget.title;
+        rendition.doc = doc;
         return rendition;
       });
-      this.selectedItems[event.currentTarget.name] = renditions;
+      this.selectedItems[doc.uid] = renditions;
     }
   }
 
