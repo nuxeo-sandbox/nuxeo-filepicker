@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-draggable-list-behavior.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">ui</a> nuxeo-draggable-list-behavior.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.59% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20.9% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/67</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import '@polymer/polymer/polymer-legacy.js';
+&nbsp;
+import '@nuxeo/nuxeo-elements/nuxeo-element.js';
+&nbsp;
+const $_documentContainer = document.createElement('template'); // eslint-disable-line camelcase
+&nbsp;
+$_documentContainer.innerHTML = `&lt;dom-module id="nuxeo-drag-proxy"&gt;
+  &lt;template&gt;
+    &lt;style include="nuxeo-styles"&gt;
+      :host {
+        display: inline-block;
+        position: absolute;
+      }
+&nbsp;
+      :host([hidden]) {
+        display: none !important;
+      }
+&nbsp;
+      span {
+        background-color: var(--nuxeo-primary-color);
+        border-radius: 50%;
+        color: white;
+        display: inline-block;
+        font-size: 10px;
+        margin: 7px;
+        text-align: center;
+        line-height: 16px;
+        height: 16px;
+        width: 16px;
+      }
+    &lt;/style&gt;
+&nbsp;
+    &lt;span&gt;[[counter]]&lt;/span&gt;
+  &lt;/template&gt;
+&nbsp;
+  
+  
+&lt;/dom-module&gt;`;
+&nbsp;
+document.head.appendChild($_documentContainer.content);
+&nbsp;
+/**
+ * @polymerBehavior
+ */
+export const DraggableListBehavior = {
+&nbsp;
+  properties: {
+    draggable: {
+      type: Boolean,
+      value: false,
+      reflectToAttribute: true,
+    },
+&nbsp;
+    /**
+     * Function used to compute if an element is a drop target.
+     */
+    dropTargetFilter: {
+      type: Function,
+      value() {
+        return this.dropTargetFilter.bind(this);
+      },
+    },
+&nbsp;
+    /**
+     * Function used to compute if an element is draggable.
+     */
+    draggableFilter: {
+      type: Function,
+      value() {
+        return this.draggableFilter.bind(this);
+      },
+    },
+  },
+&nbsp;
+  attached() {
+    let proxy;
+    const bodyEl = document.querySelector('body');
+    // mouse move handler
+    const moveFn = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+      // ELEMENTS-723: prevent dragging from beginning too early, which can interfere with other mouse events
+<span class="cstat-no" title="statement not covered" >      if (((new Date()).getTime() - this._mouseDownStarted) &lt;= 150) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+      // block list pointer events while dragging and apply grabbing cursor
+<span class="cstat-no" title="statement not covered" >      this.style.pointerEvents = 'none';</span>
+<span class="cstat-no" title="statement not covered" >      bodyEl.setAttribute('style', 'cursor: grabbing; cursor: -webkit-grabbing;');</span>
+      // create proxy with number of items that are being dragged
+<span class="cstat-no" title="statement not covered" >      if (!proxy) {</span>
+<span class="cstat-no" title="statement not covered" >        proxy = document.createElement('nuxeo-drag-proxy');</span>
+<span class="cstat-no" title="statement not covered" >        proxy.counter = this.selectedItems.length;</span>
+<span class="cstat-no" title="statement not covered" >        bodyEl.appendChild(proxy);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      proxy.setPosition(e.pageX, e.pageY);</span>
+<span class="cstat-no" title="statement not covered" >      proxy.hidden = false;</span>
+      // scroll the list if mouse is hovering the bottom/top part of the list
+<span class="cstat-no" title="statement not covered" >      this._scrollList(e);</span>
+      // iterate drop targets and check if mouse is hovering any target
+<span class="cstat-no" title="statement not covered" >      this.target = null;</span>
+<span class="cstat-no" title="statement not covered" >      this.droptargets.forEach(<span class="fstat-no" title="function not covered" >(t</span>arget) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        target.classList.remove('droptarget-hover');</span>
+        const boundingClientRect = <span class="cstat-no" title="statement not covered" >target.getBoundingClientRect();</span>
+<span class="cstat-no" title="statement not covered" >        if (e.clientX &gt; boundingClientRect.left &amp;&amp; e.clientX &lt; boundingClientRect.right &amp;&amp;</span>
+        e.clientY &gt; boundingClientRect.top &amp;&amp; e.clientY &lt; boundingClientRect.bottom) {
+<span class="cstat-no" title="statement not covered" >          this.target = target;</span>
+        }
+      });
+<span class="cstat-no" title="statement not covered" >      if (this.target) {</span>
+      // block DnD if mouse target belongs to the selected items
+<span class="cstat-no" title="statement not covered" >        if (this.selectedItems.indexOf(this.modelForElement(this.target).item) &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >          this.target = null;</span>
+<span class="cstat-no" title="statement not covered" >          proxy.hidden = true;</span>
+<span class="cstat-no" title="statement not covered" >          bodyEl.style.cursor = 'not-allowed';</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          this.target.classList.add('droptarget-hover');</span>
+        }
+      }
+    };
+&nbsp;
+    // mouse up handler
+    const upFn = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+      // restore list pointer events, restore cursor and remove proxy
+<span class="cstat-no" title="statement not covered" >      this._mouseDownStarted = null;</span>
+<span class="cstat-no" title="statement not covered" >      this.style.pointerEvents = '';</span>
+<span class="cstat-no" title="statement not covered" >      bodyEl.style.cursor = '';</span>
+<span class="cstat-no" title="statement not covered" >      if (proxy) {</span>
+<span class="cstat-no" title="statement not covered" >        bodyEl.removeChild(proxy);</span>
+<span class="cstat-no" title="statement not covered" >        proxy = null;</span>
+      }
+      // cleanup listeners
+<span class="cstat-no" title="statement not covered" >      document.removeEventListener('mousemove', moveFn);</span>
+<span class="cstat-no" title="statement not covered" >      document.removeEventListener('mouseup', upFn);</span>
+<span class="cstat-no" title="statement not covered" >      if (this.target) {</span>
+<span class="cstat-no" title="statement not covered" >        this.target.classList.remove('droptarget-hover');</span>
+<span class="cstat-no" title="statement not covered" >        this.fire('nuxeo-documents-dropped', {</span>
+          targetDocument: this.modelForElement(this.target).item,
+          documents: this.selectedItems,
+        });
+<span class="cstat-no" title="statement not covered" >        this.target = null;</span>
+      }
+    };
+&nbsp;
+    this.addEventListener('mousedown', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (this.draggable &amp;&amp; e.target &amp;&amp; this.draggableFilter(e.target)) {</span>
+        // prevent default behavior to make sure cursors are applied across all browsers
+<span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >        this._mouseDownStarted = this._mouseDownStarted || (new Date()).getTime();</span>
+        // setup listeners when drag starts
+<span class="cstat-no" title="statement not covered" >        document.addEventListener('mousemove', moveFn);</span>
+<span class="cstat-no" title="statement not covered" >        document.addEventListener('mouseup', upFn);</span>
+      }
+    });
+  },
+&nbsp;
+  get droptargets() {
+<span class="cstat-no" title="statement not covered" >    return Array.from(this.$.list.queryAllEffectiveChildren('*')).filter(<span class="fstat-no" title="function not covered" >(e</span>l) =&gt; <span class="cstat-no" title="statement not covered" >this.dropTargetFilter(</span></span>
+      el,
+      this.modelForElement(el),
+    ));
+  },
+&nbsp;
+  // override with custom logic
+  dropTargetFilter(el, model) { // eslint-disable-line no-unused-vars
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  },
+&nbsp;
+  // override with custom logic
+  draggableFilter(el) { // eslint-disable-line no-unused-vars
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  },
+&nbsp;
+  _scrollList(e) {
+    const container = <span class="cstat-no" title="statement not covered" >this.$.list;</span>
+    const threshold = <span class="cstat-no" title="statement not covered" >100;</span>
+    const boundingClientRect = <span class="cstat-no" title="statement not covered" >container.getBoundingClientRect();</span>
+    const scrollRate = <span class="cstat-no" title="statement not covered" >30;</span> // increase or decrease this to speed up or slow down scrolling
+<span class="cstat-no" title="statement not covered" >    if (boundingClientRect.bottom - e.pageY &lt;= threshold) { // scroll down</span>
+<span class="cstat-no" title="statement not covered" >      container.scrollTop += scrollRate;</span>
+    } else <span class="cstat-no" title="statement not covered" >if (e.pageY &gt;= boundingClientRect.top &amp;&amp; e.pageY &lt;= (boundingClientRect.top + threshold)) { // scroll up</span>
+<span class="cstat-no" title="statement not covered" >      container.scrollTop -= scrollRate;</span>
+    }
+  },
+};
+&nbsp;
+{
+  class DragProxy extends Nuxeo.Element {
+&nbsp;
+    static get is() {
+      return 'nuxeo-drag-proxy';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        counter: Number,
+      };
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    se</span>tPosition(x, y) {
+<span class="cstat-no" title="statement not covered" >      this.style.left = `${x}px`;</span>
+<span class="cstat-no" title="statement not covered" >      this.style.top = `${y}px`;</span>
+    }
+&nbsp;
+  }
+&nbsp;
+  customElements.define(DragProxy.is, DragProxy);
+  Nuxeo.DragProxy = DragProxy;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

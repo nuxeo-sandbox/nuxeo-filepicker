@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-slots.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">ui</a> nuxeo-slots.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>103/106</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>36/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>44/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.94% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>95/98</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">298x</span>
+<span class="cline-any cline-yes">298x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100x</span>
+<span class="cline-any cline-yes">100x</span>
+<span class="cline-any cline-yes">100x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">132x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">132x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import '@nuxeo/nuxeo-elements/nuxeo-element.js';
+&nbsp;
+import { Debouncer } from '@polymer/polymer/lib/utils/debounce.js';
+import { enqueueDebouncer } from '@polymer/polymer/lib/utils/flush.js';
+import { dom } from '@polymer/polymer/lib/legacy/polymer.dom.js';
+import { templatize } from '@polymer/polymer/lib/utils/templatize.js';
+import { idlePeriod } from '@polymer/polymer/lib/utils/async.js';
+&nbsp;
+// global slot registry
+const REGISTRY = {};
+&nbsp;
+function _getRegistry(slot) {
+  REGISTRY[slot] = REGISTRY[slot] || {nodes: [], slots: []};
+  return REGISTRY[slot];
+}
+&nbsp;
+function _same(n1, n2) {
+  const k1 = n1.getAttribute('name');
+  const k2 = n2.getAttribute('name');
+  return k1 &amp;&amp; k2 &amp;&amp; (k1 === k2);
+}
+&nbsp;
+function _registerContent(node, slot) {
+  const registry = _getRegistry(slot);
+  // if content with same name exists check if we should override it
+  const idx = registry.nodes.findIndex((n) =&gt; _same(node, n));
+  if (idx !== -1) {
+    // if new content has same or higher priority then do the override
+    if (node.priority &gt;= registry.nodes[idx].priority) {
+      // if content has a template replace existing one
+      if (node.template) {
+        registry.nodes[idx] = node;
+      } else { // merge
+        registry.nodes[idx]._merge(node);
+      }
+    }
+  } else {
+    registry.nodes.push(node);
+  }
+  registry.nodes.sort((a, b) =&gt; a.order - b.order);
+  registry.slots.forEach((s) =&gt; { s._updateContent(); });
+}
+&nbsp;
+function _unregisterContent(node, slot) {
+  const registry = _getRegistry(slot);
+  const idx = registry.nodes.findIndex((n) =&gt; _same(node, n));
+  if (idx !== -1) {
+    registry.nodes.splice(idx, 1);
+    registry.slots.forEach((s) =&gt; { s._updateContent(); });
+  }
+}
+&nbsp;
+// shared model
+let sharedModel = {};
+window.nuxeo = window.nuxeo || {};
+window.nuxeo.slots = window.nuxeo.slots || {};
+window.nuxeo.slots.setSharedModel = ((model) =&gt; {
+  sharedModel = model;
+  Object.keys(REGISTRY).forEach((k) =&gt; REGISTRY[k] &amp;&amp; REGISTRY[k].slots &amp;&amp; REGISTRY[k].slots.forEach((slot) =&gt; {
+    slot._updateSharedModel();
+  }));
+});
+&nbsp;
+{
+  /**
+   * Custom element to help build pluggable applications.
+   * Slots allow dynamic registration of content which will be stamped in the slot's parent.
+   *
+   * Example:
+   *
+   *     &lt;nuxeo-slot name="MY_SLOT"&gt;
+   *       &lt;!-- &lt;nuxeo-slot-content slot="MY_SLOT"&gt; will appear here --&gt;
+   *     &lt;/nuxeo-slot&gt;
+   *
+   * @memberof Nuxeo
+   * @demo demo/nuxeo-slots/index.html
+   */
+  class Slot extends Nuxeo.Element {
+&nbsp;
+    static get is() {
+      return 'nuxeo-slot';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        /**
+         * A unique name for this slot.
+         */
+        slot: {
+          type: String,
+          observer: '_register',
+        },
+&nbsp;
+        /**
+         * An object containing key/values to serve as properties in stamped slot content.
+         */
+        model: {
+          type: Object,
+          value() {
+            return {};
+          },
+        },
+&nbsp;
+        /**
+         * Returns true if this slot is empty.
+         */
+        empty: {
+          type: Boolean,
+          value: false,
+          notify: true,
+        },
+      };
+    }
+&nbsp;
+    static get observers() {
+      return [
+        '_updateModel(model.*)',
+      ];
+    }
+&nbsp;
+    connectedCallback() {
+      super.connectedCallback();
+      this._updateContent();
+    }
+&nbsp;
+    disconnectedCallback() {
+      super.disconnectedCallback();
+      this._unregister(this.slot);
+    }
+&nbsp;
+    _register(newSlot, oldSlot) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (oldSlot) {
+<span class="cstat-no" title="statement not covered" >        this._unregister(oldSlot);</span>
+      }
+      _getRegistry(newSlot).slots.push(this);
+    }
+&nbsp;
+    _unregister(slot) {
+      const idx = _getRegistry(slot).slots.indexOf(this);
+      _getRegistry(slot).slots.splice(idx, 1);
+    }
+&nbsp;
+    _clearContent() {
+      if (!this._instances) {
+        return;
+      }
+      this._instances.forEach((instance) =&gt; {
+        const c$ = instance.children;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (c$ &amp;&amp; c$.length) {
+          // use first child parent, for case when dom-if may have been detached
+          const p = dom(dom(c$[0]).parentNode);
+          for (let i = 0, n; (i &lt; c$.length) &amp;&amp; (n = c$[i]); i++) {
+            p.removeChild(n);
+          }
+        }
+      });
+    }
+&nbsp;
+    _render() {
+      // render
+      const parent = dom(dom(this).parentNode);
+      // keep track of stamped instances
+      this._instances = [];
+      _getRegistry(this.slot).nodes.forEach((node) =&gt; {
+        const template = node.template;
+        if (!node.disabled &amp;&amp; template) {
+          delete template.__templatizeOwner;
+          const ctor = templatize(template, this);
+          // setting the model in the constructor seems to require instanceProps to be properly set
+          // so we're doing it ourselves after
+          const el = new ctor({}); // eslint-disable-line new-cap
+          Object.keys(sharedModel).forEach((shared) =&gt; el._setPendingProperty(shared, sharedModel[shared]));
+          Object.keys(this.model).forEach((prop) =&gt; el._setPendingProperty(prop, this.model[prop]));
+          el._flushProperties();
+          this._instances.push(el);
+          parent.insertBefore(el.root, this);
+        }
+      });
+      this.set('empty', this._instances.length === 0);
+    }
+&nbsp;
+    _updateContent() {
+      this.__renderDebouncer = Debouncer.debounce(
+        this.__renderDebouncer, idlePeriod,
+        () =&gt; {
+          this._clearContent();
+          this._render();
+        },
+      );
+      // enqueuing is needed for testing, as it allows content to be stamped on flush
+      enqueueDebouncer(this.__renderDebouncer);
+    }
+&nbsp;
+    // Forward model changes as properties
+    _updateModel(change) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (change.path === 'model') {
+        Object.keys(change.value).forEach((prop) =&gt; {
+          this._forwardHostProp(prop, change.value[prop]);
+        });
+      } else {
+<span class="cstat-no" title="statement not covered" >        this._forwardHostProp(change.path.slice('model.'.length + 1), change.value);</span>
+      }
+    }
+&nbsp;
+    _updateSharedModel() {
+      Object.keys(sharedModel).forEach((prop) =&gt; {
+        this._forwardHostProp(prop, sharedModel[prop]);
+      });
+    }
+&nbsp;
+    // Implements extension point from Templatizer mixin
+    // Called as side-effect of a host property change, responsible for
+    // notifying parent.&lt;prop&gt; path change on instance
+    _forwardHostProp(prop, value) {
+      if (!this._instances) {
+        return;
+      }
+      this._instances.forEach((instance) =&gt; {
+        instance.set(prop, value);
+      }, this);
+    }
+  }
+&nbsp;
+  customElements.define(Slot.is, Slot);
+  Nuxeo.Slot = Slot;
+}
+&nbsp;
+{
+  /**
+   * Registers the given template as content in a `nuxeo-slot`.
+   * Each content should have a unique `name` that can later be used to override properties
+   * (ex: disabling previously contributed content)
+   *
+   * Example:
+   *     &lt;nuxeo-slot-content slot="MY_SLOT"&gt;
+   *       &lt;template&gt;
+   *         This content will go into MY_SLOT
+   *       &lt;/template&gt;
+   *     &lt;/nuxeo-slot-content&gt;
+   *
+   * @memberof Nuxeo
+   * @demo demo/nuxeo-slots/index.html
+   */
+  class SlotContent extends Nuxeo.Element {
+&nbsp;
+    static get is() {
+      return 'nuxeo-slot-content';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        /**
+         * The name of the slot where this content is to be displayed.
+         * Multiple slot names can be set as comma separated values, ex: SLOT1, SLOT2
+         */
+        slot: {
+          type: String,
+          value: '',
+          observer: '_slotChanged',
+        },
+&nbsp;
+        /**
+         * Allows dynamic attach/detach of slot content.
+         */
+        disabled: {
+          type: Boolean,
+          value: false,
+        },
+&nbsp;
+        /**
+         * Controls ordering of slot content nodes in a slot.
+         */
+        order: {
+          type: Number,
+          value: 0,
+        },
+&nbsp;
+        /**
+         * Controls merging of slot content with same name.
+         */
+        priority: {
+          type: Number,
+          value: 0,
+        },
+      };
+    }
+&nbsp;
+    static get observers() {
+      return [
+        '_register(disabled, order, priority)',
+      ];
+    }
+&nbsp;
+    disconnectedCallback() {
+      super.disconnectedCallback();
+      this._unregister(this.slot);
+    }
+&nbsp;
+    get template() {
+      return dom(this).querySelector('template');
+    }
+&nbsp;
+    _merge(other) {
+      this.slot = other.slot;
+      this.disabled = other.disabled;
+      this.order = other.order;
+      this.priority = other.priority;
+    }
+&nbsp;
+    _slotChanged(_, oldSlot) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (oldSlot) {
+<span class="cstat-no" title="statement not covered" >        this._unregister(oldSlot);</span>
+      }
+      this._register();
+    }
+&nbsp;
+    _register() {
+      this.slot.split(',').forEach((slot) =&gt; {
+        _registerContent(this, slot);
+      });
+    }
+&nbsp;
+    _unregister(slots) {
+      slots.split(',').forEach((slot) =&gt; {
+        _unregisterContent(this, slot);
+      });
+    }
+&nbsp;
+  }
+&nbsp;
+  customElements.define(SlotContent.is, SlotContent);
+  Nuxeo.SlotContent = SlotContent;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

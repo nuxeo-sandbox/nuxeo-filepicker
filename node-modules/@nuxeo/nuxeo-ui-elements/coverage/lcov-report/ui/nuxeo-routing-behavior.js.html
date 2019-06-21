@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-routing-behavior.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">ui</a> nuxeo-routing-behavior.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import '@polymer/polymer/polymer-legacy.js';
+&nbsp;
+/**
+ * `Nuxeo.RoutingBehavior` provides a `urlFor` helper function for reverse routing.
+ *
+ * @polymerBehavior Nuxeo.RoutingBehavior
+ */
+export const RoutingBehavior = {
+&nbsp;
+  properties: {
+    router: {
+      type: Object,
+      observer: '_routerChanged',
+      value() {
+        return RoutingBehavior.__router;
+      },
+    },
+    urlFor: {
+      type: Function,
+      computed: '_computeUrlFor(router)',
+    },
+    navigateTo: {
+      type: Function,
+      computed: '_computeNavigateTo(router)',
+    },
+  },
+&nbsp;
+  attached() {
+  // initialize router
+    this._updateRouter();
+&nbsp;
+    this.routerChangedHandler = this._updateRouter.bind(this);
+&nbsp;
+    document.addEventListener('nuxeo-router-changed', this.routerChangedHandler);
+  },
+&nbsp;
+  detached() {
+    document.removeEventListener('nuxeo-router-changed', this.routerChangedHandler);
+  },
+&nbsp;
+  _updateRouter() {
+    this.router = this.router || RoutingBehavior.__router;
+  },
+&nbsp;
+  // Caches the router
+  _routerChanged(router) {
+<span class="cstat-no" title="statement not covered" >    if (router &amp;&amp; !RoutingBehavior.__router) {</span>
+<span class="cstat-no" title="statement not covered" >      RoutingBehavior.__router = router;</span>
+<span class="cstat-no" title="statement not covered" >      document.dispatchEvent(new Event('nuxeo-router-changed'));</span>
+    }
+  },
+&nbsp;
+  /**
+   * Returns a computed `urlFor` method, based on the current `router`.
+   */
+  _computeUrlFor() {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >fu</span>nction (...args) {</span>
+<span class="cstat-no" title="statement not covered" >      if (this.router) {</span>
+        const route = <span class="cstat-no" title="statement not covered" >args[0];</span>
+        const baseUrl = <span class="cstat-no" title="statement not covered" >this.router.baseUrl || '';</span>
+<span class="cstat-no" title="statement not covered" >        if (route.startsWith('/')) {</span>
+<span class="cstat-no" title="statement not covered" >          return baseUrl + route;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!this.router[route]) {</span>
+<span class="cstat-no" title="statement not covered" >          console.error(`Could not generate a url for route ${route}`);</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
+        }
+        const params = <span class="cstat-no" title="statement not covered" >Array.prototype.slice.call(args, 1);</span>
+<span class="cstat-no" title="statement not covered" >        return baseUrl + (baseUrl.endsWith('/') ? '' : '/') +</span>
+                        (this.router.useHashbang ? '#!' : '') +
+                        this.router[route].apply(this, params);
+      }
+    };
+  },
+&nbsp;
+  /**
+   * Returns a computed `navigateTo` method, based on the current `router`.
+   * Invokes `router.navigate` to trigger the actual navigation.
+   */
+  _computeNavigateTo() {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >fu</span>nction (...args) {</span>
+<span class="cstat-no" title="statement not covered" >      if (this.router) {</span>
+        const route = <span class="cstat-no" title="statement not covered" >args[0];</span>
+        const baseUrl = <span class="cstat-no" title="statement not covered" >this.router.baseUrl || '';</span>
+<span class="cstat-no" title="statement not covered" >        if (route.startsWith('/')) {</span>
+<span class="cstat-no" title="statement not covered" >          this.router.navigate(baseUrl + route);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!this.router[route]) {</span>
+<span class="cstat-no" title="statement not covered" >          console.error(`Could not navigate to a url for route ${route}`);</span>
+        }
+        const params = <span class="cstat-no" title="statement not covered" >Array.prototype.slice.call(args, 1);</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(this.router[route].apply(this, params));</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        console.error('No router defined');</span>
+      }
+    };
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

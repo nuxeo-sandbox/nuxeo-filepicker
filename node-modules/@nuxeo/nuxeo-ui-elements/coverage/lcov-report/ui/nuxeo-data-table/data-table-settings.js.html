@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-data-table/data-table-settings.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">ui/nuxeo-data-table</a> data-table-settings.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.54% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/13</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* Part of `nuxeo-data-table` */
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class.js';
+import '@nuxeo/nuxeo-elements/nuxeo-connection.js';
+import '@nuxeo/nuxeo-elements/nuxeo-element.js';
+import '@polymer/paper-button/paper-button.js';
+import '@polymer/paper-checkbox/paper-checkbox.js';
+import '@polymer/paper-icon-button/paper-icon-button.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
+import { I18nBehavior } from '../nuxeo-i18n-behavior.js';
+import '../widgets/nuxeo-dialog.js';
+&nbsp;
+{
+  class DataTableSettings extends mixinBehaviors([I18nBehavior], Nuxeo.Element) {
+    static get template() {
+      return html`
+    &lt;style&gt;
+      :host {
+        position: relative;
+      }
+&nbsp;
+      .paper-content {
+        min-width: 20vw;
+        margin-bottom: 2em;
+      }
+&nbsp;
+      paper-icon-button {
+        position: absolute;
+        top: 1.5em;
+        right: 8px;
+        width: 1.5em;
+        height: 1.5em;
+        padding: 0;
+      }
+&nbsp;
+      paper-button {
+        margin: 0;
+        padding: 8px 16px;
+      }
+&nbsp;
+      paper-button:hover {
+        @apply --nx-button-hover;
+      }
+&nbsp;
+      paper-button.primary {
+        @apply --nx-button-primary;
+      }
+&nbsp;
+      paper-button.primary:hover,
+      paper-button.primary:focus {
+        @apply --nx-button-primary-hover;
+      }
+&nbsp;
+      .buttons {
+        @apply --buttons-bar;
+      }
+    &lt;/style&gt;
+&nbsp;
+    &lt;nuxeo-connection id="nxcon"&gt;&lt;/nuxeo-connection&gt;
+&nbsp;
+    &lt;nuxeo-dialog id="columnsSettingsPopup" with-backdrop="" on-iron-overlay-closed="_onSettingsClosed"&gt;
+      &lt;h2&gt;[[i18n('tableSettings.columnSettings')]]&lt;/h2&gt;
+      &lt;div class="paper-content layout horizontal"&gt;
+        &lt;div class="layout vertical"&gt;
+          &lt;div class="row layout horizontal"&gt;
+            &lt;div class="label-container"&gt;
+              &lt;label&gt;&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;dom-repeat items="[[columns]]" as="column"&gt;
+                &lt;template&gt;
+                  &lt;tr&gt;
+                    &lt;td&gt;
+                      &lt;paper-checkbox noink="" checked="{{!column.hidden}}"&gt;&lt;/paper-checkbox&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                      [[column.name]]
+                    &lt;/td&gt;
+                  &lt;/tr&gt;
+                &lt;/template&gt;
+              &lt;/dom-repeat&gt;&lt;table&gt;
+              
+            &lt;/table&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="buttons horizontal end-justified layout"&gt;
+        &lt;div class="flex start-justified"&gt;
+          &lt;paper-button noink on-click="_resetSettings"&gt;[[i18n('tableSettings.columnSettings.reset')]]&lt;/paper-button&gt;
+        &lt;/div&gt;
+        &lt;paper-button noink class="primary" dialog-dismiss&gt;[[i18n('tableSettings.columnSettings.close')]]&lt;/paper-button&gt;
+      &lt;/div&gt;
+    &lt;/nuxeo-dialog&gt;
+&nbsp;
+    &lt;paper-icon-button noink icon="nuxeo:settings" id="toggleColSettings" on-click="toggleColsSettingsPopup"&gt;
+    &lt;/paper-icon-button&gt;
+`;
+    }
+&nbsp;
+    static get is() {
+      return 'nuxeo-data-table-settings';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        columns: {
+          type: Array,
+          notify: true,
+        },
+      };
+    }
+&nbsp;
+    static get observers() {
+      return [
+        '_columnDisplayChanged(columns.*)',
+      ];
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    to</span>ggleColsSettingsPopup() {
+<span class="cstat-no" title="statement not covered" >      this.$$('#columnsSettingsPopup').toggle();</span>
+    }
+&nbsp;
+    _columnDisplayChanged(change) {
+      if (change.path.endsWith('hidden')) {
+        this.dispatchEvent(new CustomEvent('settings-changed', {
+          composed: true,
+          bubbles: true,
+        }));
+      }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _r</span>esetSettings() {
+<span class="cstat-no" title="statement not covered" >      this.columns.forEach(<span class="fstat-no" title="function not covered" >(c</span>olumn, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.set(`columns.${idx}.hidden`, column.hiddenBack);</span>
+      });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _o</span>nSettingsClosed() {
+<span class="cstat-no" title="statement not covered" >      if (this.columns.every(<span class="fstat-no" title="function not covered" >(c</span>olumn) =&gt; <span class="cstat-no" title="statement not covered" >column.hidden)</span>) {</span>
+<span class="cstat-no" title="statement not covered" >        this._resetSettings();</span>
+      }
+    }
+  }
+&nbsp;
+  customElements.define(DataTableSettings.is, DataTableSettings);
+  Nuxeo.DataTableSettings = DataTableSettings;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

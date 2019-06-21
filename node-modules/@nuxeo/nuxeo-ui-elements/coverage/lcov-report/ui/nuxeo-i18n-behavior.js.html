@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-i18n-behavior.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">ui</a> nuxeo-i18n-behavior.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>16/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.04% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/44</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">150x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">150x</span>
+<span class="cline-any cline-yes">150x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">152x</span>
+<span class="cline-any cline-yes">152x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import '@polymer/polymer/polymer-legacy.js';
+&nbsp;
+/*
+ * @license
+ * (C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+&nbsp;
+window.nuxeo = window.nuxeo || {};
+window.nuxeo.I18n = window.nuxeo.I18n || {};
+&nbsp;
+/**
+ * Translates the given key.
+ * Also accepts a default value and multiple arguments which will be replaced on the value.
+ */
+window.nuxeo.I18n.translate = window.nuxeo.I18n.translate || function (...args) {
+  const language = window.nuxeo.I18n.language || 'en';
+  const key = args[0];
+  let value = (window.nuxeo.I18n[language] &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >window.nuxeo.I18n[language][key])</span> || key;
+  const params = Array.prototype.slice.call(args, 1);
+  for (let i = 0; i &lt; params.length; i++) {
+<span class="cstat-no" title="statement not covered" >    value = value.replace(`{${i}}`, params[i]);</span>
+  } // improve this to use both numbered and named parameters
+  return value;
+};
+&nbsp;
+/**
+ * loads a locale using a locale resolver
+ */
+window.nuxeo.I18n.loadLocale = <span class="fstat-no" title="function not covered" >fu</span>nction () {
+<span class="cstat-no" title="statement not covered" >  return window.nuxeo.I18n.localeResolver ? window.nuxeo.I18n.localeResolver().then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+    // TODO we should refactor this later to use a factory function instead; it requires factoring the resolver as well.
+<span class="cstat-no" title="statement not covered" >    window.nuxeo.I18n.translate = window.nuxeo.I18n.translate.bind(null);</span>
+<span class="cstat-no" title="statement not covered" >    document.dispatchEvent(new Event('i18n-locale-loaded'));</span>
+  }) : new Promise((<span class="fstat-no" title="function not covered" >()</span> =&gt; {}));
+};
+&nbsp;
+/**
+ * The default locale resolver that reads labels from JSON files in a folder, with format messages.&lt;language&gt;.json
+ */
+export function <span class="fstat-no" title="function not covered" >XHRLocaleResolver(</span>msgFolder) {
+<span class="cstat-no" title="statement not covered" >  return <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >    return new Promise((<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; {</span>
+      // point all english based locales to the reference file
+<span class="cstat-no" title="statement not covered" >      if (window.nuxeo.I18n.language.startsWith('en-')) {</span>
+<span class="cstat-no" title="statement not covered" >        window.nuxeo.I18n.language = 'en';</span>
+      }
+      let language = <span class="cstat-no" title="statement not covered" >window.nuxeo.I18n.language || 'en';</span>
+      function <span class="fstat-no" title="function not covered" >loadLang(</span>url) {
+        const referenceFile = <span class="cstat-no" title="statement not covered" >`${msgFolder}/messages.json`;</span>
+        const xhr = <span class="cstat-no" title="statement not covered" >new XMLHttpRequest();</span>
+<span class="cstat-no" title="statement not covered" >        xhr.open('GET', url, true);</span>
+<span class="cstat-no" title="statement not covered" >        xhr.onreadystatechange = <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >          if (xhr.readyState === 4) {</span>
+<span class="cstat-no" title="statement not covered" >            if (xhr.status === 200) {</span>
+<span class="cstat-no" title="statement not covered" >              window.nuxeo.I18n[language] = JSON.parse(this.response); </span>// cache this locale
+<span class="cstat-no" title="statement not covered" >              window.nuxeo.I18n.language = language;</span>
+<span class="cstat-no" title="statement not covered" >              resolve(this.response);</span>
+            } else <span class="cstat-no" title="statement not covered" >if (xhr.status === 404 &amp;&amp; url !== referenceFile) {</span>
+<span class="cstat-no" title="statement not covered" >              console.log(`Could not find locale "${language}". Defaulting to "en".`);</span>
+<span class="cstat-no" title="statement not covered" >              language = 'en';</span>
+<span class="cstat-no" title="statement not covered" >              loadLang(referenceFile); </span>// default to messages.json
+            }
+          }
+        };
+<span class="cstat-no" title="statement not covered" >        xhr.onerror = <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+<span class="cstat-no" title="statement not covered" >          console.error(`Failed to load ${url}`);</span>
+        };
+<span class="cstat-no" title="statement not covered" >        xhr.send();</span>
+      }
+      const url = <span class="cstat-no" title="statement not covered" >`${msgFolder}/messages${language === 'en' ? '' : `-${language}`}.json`;</span>
+<span class="cstat-no" title="statement not covered" >      loadLang(url);</span>
+    }));
+  };
+}
+&nbsp;
+/**
+ * `Nuxeo.I18nBehavior` provides a `i18n` helper function for translations.
+ *
+ * @polymerBehavior
+ */
+export const I18nBehavior = {
+  properties: {
+    /**
+     * Returns the translation for the given key.
+     */
+    i18n: {
+      type: Function,
+      notify: true,
+      value() {
+        return window.nuxeo.I18n.translate;
+      },
+    },
+  },
+&nbsp;
+  created() {
+    this.localeLoadedHandler = this.refreshI18n.bind(this);
+    document.addEventListener('i18n-locale-loaded', this.localeLoadedHandler);
+  },
+&nbsp;
+  detached() {
+    document.removeEventListener('i18n-locale-loaded', this.localeLoadedHandler);
+    this.localeLoadedHandler = null;
+  },
+&nbsp;
+  refreshI18n() {
+    // this.i18n = null;
+<span class="cstat-no" title="statement not covered" >    this.set('i18n', window.nuxeo.I18n.translate);</span>
+  },
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

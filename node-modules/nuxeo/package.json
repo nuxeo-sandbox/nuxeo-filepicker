@@ -1,0 +1,83 @@
+{
+  "_from": "nuxeo@^3.2.1",
+  "_id": "nuxeo@3.12.0",
+  "_inBundle": false,
+  "_integrity": "sha512-y8G+gTHz82bqcGWq9JMYp5j/aJIfwmp/ztMkrEr9LWO7jBUM0Utr17s4W1aw8UeIgJy3WuC02i5FV7n9yCKbGg==",
+  "_location": "/nuxeo",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "nuxeo@^3.2.1",
+    "name": "nuxeo",
+    "escapedName": "nuxeo",
+    "rawSpec": "^3.2.1",
+    "saveSpec": null,
+    "fetchSpec": "^3.2.1"
+  },
+  "_requiredBy": [
+    "/@nuxeo/nuxeo-elements"
+  ],
+  "_resolved": "https://registry.npmjs.org/nuxeo/-/nuxeo-3.12.0.tgz",
+  "_shasum": "6c1a273cfeccc311f46a2a0d8e617d7c9924b98a",
+  "_spec": "nuxeo@^3.2.1",
+  "_where": "/Users/vpasquier/nuxeo/nuxeo-sitecore/node_modules/@nuxeo/nuxeo-elements",
+  "author": {
+    "name": "Nuxeo",
+    "url": "http://www.nuxeo.com/"
+  },
+  "browser": {
+    "promise-queue": "promise-queue/lib/index.js",
+    "./lib/deps/fetch.js": "./lib/deps/fetch-browser.js",
+    "./lib/deps/promise.js": "./lib/deps/promise-browser.js",
+    "./lib/deps/form-data.js": "./lib/deps/form-data-browser.js",
+    "./lib/deps/utils/buffer.js": "./lib/deps/utils/buffer-browser.js",
+    "./es5/deps/fetch.js": "./es5/deps/fetch-browser.js",
+    "./es5/deps/promise.js": "./es5/deps/promise-browser.js",
+    "./es5/deps/form-data.js": "./es5/deps/form-data-browser.js",
+    "./es5/deps/utils/buffer.js": "./es5/deps/utils/buffer-browser.js"
+  },
+  "bugs": {
+    "url": "https://github.com/nuxeo/nuxeo-js-client/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Thomas Roger",
+      "email": "troger@nuxeo.com"
+    }
+  ],
+  "dependencies": {
+    "buffer": "^5.2.0",
+    "es6-promise": "^4.0.5",
+    "extend": "^3.0.0",
+    "form-data": "^2.1.2",
+    "md5": "^2.2.1",
+    "node-fetch-npm": "^2.0.2",
+    "promise-queue": "^2.2.2",
+    "querystring": "^0.2.0",
+    "random-js": "^1.0.8",
+    "whatwg-fetch": "^2.0.2"
+  },
+  "deprecated": false,
+  "description": "JavaScript client library for Nuxeo API",
+  "engines": {
+    "node": ">= 4.9.1"
+  },
+  "homepage": "https://github.com/nuxeo/nuxeo-js-client",
+  "keywords": [
+    "nuxeo"
+  ],
+  "license": "Apache-2.0",
+  "main": "./lib/index.js",
+  "name": "nuxeo",
+  "react-native": {
+    "./lib/deps/fetch.js": "./lib/deps/fetch-react-native.js",
+    "./lib/deps/promise.js": "./lib/deps/promise.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nuxeo/nuxeo-js-client.git"
+  },
+  "version": "3.12.0"
+}

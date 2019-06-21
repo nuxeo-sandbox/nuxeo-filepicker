@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-data-table/nuxeo-data-table-row-actions.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">ui/nuxeo-data-table</a> nuxeo-data-table-row-actions.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* Part of `nuxeo-data-table` */
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class.js';
+import '@nuxeo/nuxeo-elements/nuxeo-element.js';
+import '@polymer/paper-icon-button/paper-icon-button.js';
+import '@polymer/polymer/lib/elements/dom-if.js';
+import { I18nBehavior } from '../nuxeo-i18n-behavior.js';
+import '../widgets/nuxeo-tooltip.js';
+import './data-table-templatizer-behavior.js';
+&nbsp;
+{
+  class DataTableRowActions
+    extends mixinBehaviors([saulis.DataTableTemplatizerBehavior, I18nBehavior], Nuxeo.Element) {
+<span class="fstat-no" title="function not covered" >    st</span>atic get template() {
+<span class="cstat-no" title="statement not covered" >      return html`</span>
+    &lt;style&gt;
+      :host {
+        @apply --layout-horizontal;
+        @apply --layout-center;
+      }
+      .actions {
+        @apply --layout-horizontal;
+        @apply --layout-end-justified;
+      }
+      .actions .orderable {
+        min-width: 80px;
+        @apply --layout-horizontal;
+        @apply --layout-end-justified;
+      }
+    &lt;/style&gt;
+&nbsp;
+    &lt;div class="actions"&gt;
+      &lt;dom-if if="[[orderable]]"&gt;
+        &lt;template&gt;
+          &lt;div class="orderable"&gt;
+            &lt;dom-if if="[[isUpVisible(index)]]"&gt;
+              &lt;template&gt;
+                &lt;paper-icon-button noink id="upButton" icon="icons:arrow-upward" on-click="moveUp"&gt;&lt;/paper-icon-button&gt;
+                &lt;nuxeo-tooltip for="upButton" position="left"&gt;[[i18n('command.moveUpward')]]&lt;/nuxeo-tooltip&gt;
+              &lt;/template&gt;
+            &lt;/dom-if&gt;
+            &lt;dom-if if="[[isDownVisible(index, size)]]"&gt;
+              &lt;template&gt;
+                &lt;paper-icon-button noink id="downButton" icon="icons:arrow-downward" on-click="moveDown"&gt;
+                &lt;/paper-icon-button&gt;
+                &lt;nuxeo-tooltip for="downButton" position="left"&gt;[[i18n('command.moveDownward')]]&lt;/nuxeo-tooltip&gt;
+              &lt;/template&gt;
+            &lt;/dom-if&gt;
+          &lt;/div&gt;
+        &lt;/template&gt;
+      &lt;/dom-if&gt;
+      &lt;dom-if if="[[editable]]"&gt;
+        &lt;template&gt;
+          &lt;paper-icon-button id="edit-button" icon="nuxeo:edit" on-click="_editEntry" noink&gt;&lt;/paper-icon-button&gt;
+          &lt;nuxeo-tooltip for="edit-button" position="left"&gt;[[i18n('command.edit')]]&lt;/nuxeo-tooltip&gt;
+          &lt;paper-icon-button id="delete-button" name="delete" icon="nuxeo:delete" on-click="_deleteEntry" noink&gt;
+          &lt;/paper-icon-button&gt;
+          &lt;nuxeo-tooltip for="delete-button" position="left"&gt;[[i18n('command.remove')]]&lt;/nuxeo-tooltip&gt;
+        &lt;/template&gt;
+      &lt;/dom-if&gt;
+    &lt;/div&gt;
+`;
+    }
+&nbsp;
+    static get is() {
+      return 'nuxeo-data-table-row-actions';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        beforeBind: Object,
+        size: Number,
+        editable: Boolean,
+        orderable: Boolean,
+      };
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    st</span>atic get observers() {
+<span class="cstat-no" title="statement not covered" >      return [</span>
+        '_beforeBind(beforeBind, item.*, index, size)',
+      ];
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _b</span>eforeBind(beforeBind, item, index, size) {
+<span class="cstat-no" title="statement not covered" >      if (!beforeBind) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+      const data = <span class="cstat-no" title="statement not covered" >{</span>
+        index,
+        item: item.base,
+        size,
+      };
+<span class="cstat-no" title="statement not covered" >      beforeBind(data, this);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _e</span>ditEntry() {
+<span class="cstat-no" title="statement not covered" >      this.dispatchEvent(new CustomEvent('edit-entry', {</span>
+        composed: true,
+        bubbles: true,
+        detail: { item: this.item, index: this.index },
+      }));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _d</span>eleteEntry() {
+<span class="cstat-no" title="statement not covered" >      this.dispatchEvent(new CustomEvent('delete-entry', {</span>
+        composed: true,
+        bubbles: true,
+        detail: { item: this.item, index: this.index },
+      }));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    mo</span>veUp() {
+<span class="cstat-no" title="statement not covered" >      this.dispatchEvent(new CustomEvent('move-upward', {</span>
+        composed: true,
+        bubbles: true,
+        detail: { item: this.item, index: this.index },
+      }));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    mo</span>veDown() {
+<span class="cstat-no" title="statement not covered" >      this.dispatchEvent(new CustomEvent('move-downward', {</span>
+        composed: true,
+        bubbles: true,
+        detail: { item: this.item, index: this.index },
+      }));
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    is</span>UpVisible(index) {
+<span class="cstat-no" title="statement not covered" >      return this.orderable &amp;&amp; index &gt; 0;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    is</span>DownVisible(index) {
+<span class="cstat-no" title="statement not covered" >      return this.orderable &amp;&amp; index &lt; this.size - 1;</span>
+    }
+  }
+&nbsp;
+  customElements.define(DataTableRowActions.is, DataTableRowActions);
+  Nuxeo.DataTableRowActions = DataTableRowActions;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

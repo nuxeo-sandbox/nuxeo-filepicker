@@ -1,0 +1,8 @@
+{
+  "entrypoint": "nuxeo-elements.js",
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  }
+}

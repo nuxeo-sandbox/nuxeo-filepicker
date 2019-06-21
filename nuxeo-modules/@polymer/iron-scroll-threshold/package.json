@@ -1,0 +1,66 @@
+{
+  "_args": [
+    [
+      "@polymer/iron-scroll-threshold@3.0.1",
+      "/Users/vpasquier/nuxeo/nuxeo-sitecore"
+    ]
+  ],
+  "_from": "@polymer/iron-scroll-threshold@3.0.1",
+  "_id": "@polymer/iron-scroll-threshold@3.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-Zm06AP1CDfa19b5yTvLRjBfDA85zMh4XunL2/Fz5n2faZcP5zr5tIBtXsAqz4ug9I3Uau7rjzkyL7Cc0ni8sUA==",
+  "_location": "/@polymer/iron-scroll-threshold",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@polymer/iron-scroll-threshold@3.0.1",
+    "name": "@polymer/iron-scroll-threshold",
+    "escapedName": "@polymer%2firon-scroll-threshold",
+    "scope": "@polymer",
+    "rawSpec": "3.0.1",
+    "saveSpec": null,
+    "fetchSpec": "3.0.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-scroll-threshold/-/iron-scroll-threshold-3.0.1.tgz",
+  "_spec": "3.0.1",
+  "_where": "/Users/vpasquier/nuxeo/nuxeo-sitecore",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-scroll-threshold/issues"
+  },
+  "dependencies": {
+    "@polymer/iron-scroll-target-behavior": "^3.0.0-pre.26",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "description": "Triggers an event when nearing the beginning or end of a scrollable element ",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-scroll-threshold",
+  "keywords": [
+    "web-components",
+    "polymer"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "iron-scroll-threshold.js",
+  "name": "@polymer/iron-scroll-threshold",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-scroll-threshold.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepare": "npm run generate-types"
+  },
+  "version": "3.0.1"
+}

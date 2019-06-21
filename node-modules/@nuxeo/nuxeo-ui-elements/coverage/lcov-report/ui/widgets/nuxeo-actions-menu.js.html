@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/widgets/nuxeo-actions-menu.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">ui/widgets</a> nuxeo-actions-menu.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.84% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>44/63</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.17% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.64% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>39/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">756x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">728x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { FlattenedNodesObserver } from '@polymer/polymer/lib/utils/flattened-nodes-observer.js';
+import { idlePeriod, microTask } from '@polymer/polymer/lib/utils/async.js';
+import { Debouncer } from '@polymer/polymer/lib/utils/debounce.js';
+import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class.js';
+import { IronResizableBehavior } from '@polymer/iron-resizable-behavior/iron-resizable-behavior.js';
+import '@nuxeo/nuxeo-elements/nuxeo-element.js';
+import '@polymer/paper-icon-button/paper-icon-button.js';
+import '@polymer/paper-listbox/paper-listbox.js';
+import '@polymer/paper-menu-button/paper-menu-button.js';
+import { I18nBehavior } from '../nuxeo-i18n-behavior.js';
+import './nuxeo-tooltip.js';
+&nbsp;
+{
+  /**
+   * A responsive menu that only displays elements fitting the available space. Remaining elements will be placed
+   * in a dropdown menu.
+   *
+   * Example:
+   *
+   *     &lt;nuxeo-actions-menu&gt;
+   *       &lt;nuxeo-add-to-collection-button document="[[document]]"&gt;&lt;/nuxeo-add-to-collection-button&gt;
+   *       &lt;nuxeo-preview-button document="[[document]]"&gt;&lt;/nuxeo-preview-button&gt;
+   *       &lt;nuxeo-favorites-toggle-button document="[[document]]"&gt;&lt;/nuxeo-favorites-toggle-button&gt;
+   *     &lt;/nuxeo-actions-menu&gt;
+   *
+   * @appliesMixin Polymer.IronResizableBehavior
+   * @memberof Nuxeo
+   * @demo demo/nuxeo-actions-menu/index.html
+   */
+  class ActionsMenu extends mixinBehaviors([IronResizableBehavior, I18nBehavior], Nuxeo.Element) {
+    static get template() {
+      return html`
+    &lt;style&gt;
+      :host, #main {
+        @apply --layout-horizontal;
+        @apply --layout-center;
+      }
+&nbsp;
+      [hidden] {
+        display: none !important;
+      }
+&nbsp;
+      #reparent, #reparent &gt; * {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+&nbsp;
+      #slot::slotted(*), /* chrome, safari */
+      #main::slotted(*) { /* firefox, edge */
+        @apply --nuxeo-actions-menu-main;
+      }
+&nbsp;
+      #dropdown::slotted(*), /* chrome, safari */
+      paper-listbox::slotted(*) { /* firefox, edge */
+        outline: none;
+        user-select: none;
+        @apply --nuxeo-actions-menu-dropdown;
+      }
+&nbsp;
+      paper-menu-button {
+        --paper-menu-button: {
+          padding: 0;
+        }
+      }
+&nbsp;
+      paper-listbox {
+        @apply --layout-vertical;
+      }
+    &lt;/style&gt;
+    
+    &lt;div id="main"&gt;
+      &lt;slot id="slot"&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+    &lt;div id="reparent"&gt;&lt;/div&gt;
+    &lt;paper-menu-button id="dropdownButton" close-on-activate="" no-overlap="" horizontal-align="right"&gt;
+      &lt;paper-icon-button icon="icons:more-vert" slot="dropdown-trigger" alt="dropdown"&gt;&lt;/paper-icon-button&gt;
+      &lt;paper-listbox slot="dropdown-content"&gt;
+        &lt;slot id="dropdown" name="dropdown"&gt;&lt;/slot&gt;
+      &lt;/paper-listbox&gt;
+    &lt;/paper-menu-button&gt;
+    &lt;paper-tooltip for="dropdownButton"&gt;[[i18n('actionsMenu.more')]]&lt;/paper-tooltip&gt;
+`;
+    }
+&nbsp;
+    static get is() {
+      return 'nuxeo-actions-menu';
+    }
+&nbsp;
+    connectedCallback() {
+      super.connectedCallback();
+      this._observer = new FlattenedNodesObserver(this, ({addedNodes, removedNodes}) =&gt; {
+        // mark unresolved custom elements
+        const unresolved = addedNodes.filter((node) =&gt; node.tagName &amp;&amp; node.tagName.includes('-') &amp;&amp;
+          !customElements.get(node.tagName.toLowerCase()));
+        // defer rendering for non resolved elements
+        unresolved.forEach((node) =&gt;
+          customElements.whenDefined(node.tagName.toLowerCase()).then(this._layout.bind(this)));
+        if ((addedNodes.length &gt; 0 &amp;&amp; unresolved.length === 0) || removedNodes.length &gt; 0) {
+          // do instant rendering if we're removing nodes or adding at least one resolved element
+          this._layout();
+        }
+      });
+      this.addEventListener('iron-resize', this._layout);
+      this.addEventListener('dom-change', this._layout);
+      this.addEventListener('iron-overlay-opened', this._reparent);
+    }
+&nbsp;
+    disconnectedCallback() {
+      super.disconnectedCallback();
+      this._observer.disconnect();
+      this.removeEventListener('iron-resize', this._layout);
+      this.removeEventListener('dom-change', this._layout);
+      this.removeEventListener('iron-overlay-opened', this._reparent);
+    }
+&nbsp;
+    ready() {
+      super.ready();
+    }
+&nbsp;
+    get contentWidth() {
+      return this._getMenuElements().reduce((sum, current) =&gt; sum + current.clientWidth, 0);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _r</span>eparent(e) {
+      const src = <span class="cstat-no" title="statement not covered" >e.composedPath()[0];</span>
+<span class="cstat-no" title="statement not covered" >      if ((src.tagName === 'NUXEO-DIALOG' || src.tagName === 'PAPER-DIALOG') &amp;&amp; e.target.slot === 'dropdown') {</span>
+        const parent = <span class="cstat-no" title="statement not covered" >e.target.parentElement;</span>
+        const sibling = <span class="cstat-no" title="statement not covered" >e.target.nextElementSibling;</span>
+        const action = <span class="cstat-no" title="statement not covered" >e.target;</span>
+        /**
+         * XXX: Instead of reparenting dialogs, this handler reparents the actions that trigger dialogs instead, to
+         * prevent issues with stacking contexts. The goal is threefold:
+         *  1) to prevent the backdrop from overlaping the dialog
+         *  2) to prevent the dialog from disappearing when the dropdown is closed
+         *  3) to preserve the dialogs inside the actions, which might need to be accessible for custom logics
+         */
+<span class="cstat-no" title="statement not covered" >        idlePeriod.run(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          this.$.reparent.appendChild(action);</span>
+<span class="cstat-no" title="statement not covered" >          action._actionsMenuReparent = action._actionsMenuReparent || (<span class="fstat-no" title="function not covered" >(e</span>vt) =&gt; {</span>
+            let path = <span class="cstat-no" title="statement not covered" >evt.composedPath();</span>
+<span class="cstat-no" title="statement not covered" >            if (path[0].tagName !== 'NUXEO-DIALOG' &amp;&amp; path[0].tagName !== 'PAPER-DIALOG') {</span>
+              // we don't want to move the action back if the event is comming from a non-dialog element
+<span class="cstat-no" title="statement not covered" >              return;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            path = path.slice(0, path.findIndex(<span class="fstat-no" title="function not covered" >(e</span>l) =&gt; <span class="cstat-no" title="statement not covered" >el === action)</span>);</span>
+<span class="cstat-no" title="statement not covered" >            if (path.filter(<span class="fstat-no" title="function not covered" >(e</span>l) =&gt; <span class="cstat-no" title="statement not covered" >el.tagName === 'NUXEO-DIALOG' || el.tagName === 'PAPER-DIALOG')</span>.length &gt; 1) {</span>
+              // nor if it comes from an inner dialog
+<span class="cstat-no" title="statement not covered" >              return;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            parent.insertBefore(action, sibling);</span>
+          });
+<span class="cstat-no" title="statement not covered" >          action.addEventListener('iron-overlay-closed', action._actionsMenuReparent);</span>
+        });
+      }
+    }
+&nbsp;
+    _getMenuElements() {
+      return this.$.slot.assignedNodes({flatten: true}).filter((node) =&gt; node.nodeType === Node.ELEMENT_NODE);
+    }
+&nbsp;
+    _getDropdownElements() {
+      return this.$.dropdown.assignedNodes({flatten: true}).filter((node) =&gt; node.nodeType === Node.ELEMENT_NODE);
+    }
+&nbsp;
+    _moveToMenu(el) {
+      el.slot = '';
+      el.removeAttribute('show-label');
+    }
+&nbsp;
+    _moveToDropdown(el) {
+      el.slot = 'dropdown';
+      el.setAttribute('show-label', '');
+    }
+&nbsp;
+    _layout(e) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (e &amp;&amp; e.type &amp;&amp; e.composedPath().find((el) =&gt; el.id === 'reparent' || el.id === 'dropdownButton')) {
+<span class="cstat-no" title="statement not covered" >        return; </span>// skip events from within reparented actions
+      }
+      this.__layoutDebouncer = Debouncer.debounce(
+        this.__layoutDebouncer, microTask,
+        () =&gt; {
+          let els = this._getDropdownElements();
+          /**
+           * XXX: We're using this.contentWidth instead of this.scrollWidth because it takes too much time to be
+           * updated on polyfilled browsers (Firex and Edge), leading to an empty menu if there's a single element
+           * that doesn't fit on the menu.
+           */
+          while (els.length &amp;&amp; this.contentWidth &lt;= this.clientWidth) {
+            this._moveToMenu(els.shift());
+          }
+          if (!els.length) {
+            this.$.dropdownButton.hidden = true;
+          }
+          // let's move any element in the menu to the "dropdown" slot if it doesn't fit
+          els = this._getMenuElements();
+          while (els.length &amp;&amp; (this.contentWidth + this.$.dropdownButton.offsetWidth) &gt; this.clientWidth) {
+            this._moveToDropdown(els.pop());
+            if (this.$.dropdownButton.hidden) {
+              this.$.dropdownButton.hidden = false;
+            }
+          }
+        },
+      );
+    }
+  }
+&nbsp;
+  customElements.define(ActionsMenu.is, ActionsMenu);
+  Nuxeo.ActionsMenu = ActionsMenu;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

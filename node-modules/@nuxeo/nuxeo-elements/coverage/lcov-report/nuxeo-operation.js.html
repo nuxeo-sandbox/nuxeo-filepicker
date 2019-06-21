@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for nuxeo-operation.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> nuxeo-operation.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.18% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>43/67</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import './nuxeo-element.js';
+import './nuxeo-connection.js';
+import './nuxeo-page-provider.js';
+&nbsp;
+{
+  /**
+   * `nuxeo-operation` allows calling an operation on a Nuxeo server.
+   *
+   *     &lt;nuxeo-operation auto
+   *                      op="Document.Query"
+   *                      params='{"query": "select * from Document"}'
+   *                      on-response="handleResponse"
+   *                      enrichers="documentURL, preview"&gt;&lt;/nuxeo-operation&gt;
+   *
+   * With `auto` set to `true`, the operation is executed whenever
+   * its `url` or `params` properties are changed.
+   *
+   * Note: The `params` attribute must be double quoted JSON.
+   *
+   * You can trigger an operation explicitly by calling `execute` on the
+   * element.
+   *
+   * @memberof Nuxeo
+   */
+  class Operation extends Nuxeo.Element {
+    static get template() {
+      return html`
+    &lt;style&gt;
+      :host {
+        display: none;
+      }
+    &lt;/style&gt;
+    &lt;nuxeo-connection id="nx" connection-id="{{connectionId}}"&gt;&lt;/nuxeo-connection&gt;
+`;
+    }
+&nbsp;
+    static get is() {
+      return 'nuxeo-operation';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        /** The id of a nuxeo-connection to use. */
+        connectionId: {
+          type: String,
+          value: '',
+        },
+&nbsp;
+        /** The success response status */
+        success: {
+          type: Boolean,
+          notify: true,
+        },
+&nbsp;
+        /** The error response status */
+        error: {
+          type: String,
+          notify: true,
+        },
+&nbsp;
+        /** The id the operation to call. */
+        op: {
+          type: String,
+          value: '',
+        },
+&nbsp;
+        /** The parameters to send. */
+        params: {
+          type: Object,
+          value: {},
+        },
+&nbsp;
+        /** The operation input. */
+        input: {
+          type: Object,
+        },
+&nbsp;
+        /** If true, automatically execute the operation when either `op` or `params` changes. */
+        auto: {
+          type: Boolean,
+          value: false,
+        },
+&nbsp;
+        /** The response from the server. */
+        response: {
+          type: Object,
+          value: null,
+          notify: true,
+        },
+&nbsp;
+        /** The headers of the request. */
+        headers: {
+          type: Object,
+          value: null,
+        },
+&nbsp;
+        /**
+         * The `content enricher` of the resource.
+         * Can be an object with entity type as keys or list or string with the entity type defined by
+         * `enrichers-entity`.
+         */
+        enrichers: {
+          type: Object,
+          value: {},
+        },
+&nbsp;
+        /** The `content enricher` entity-type of the resource. Default value for Nuxeo Document Model */
+        enrichersEntity: {
+          type: String,
+          value: 'document',
+        },
+&nbsp;
+        /**
+         * List of comma separated values of the document schemas to be returned.
+         * All document schemas are returned by default.
+         */
+        schemas: {
+          type: String,
+          value: '',
+        },
+&nbsp;
+        /**
+         * Active request count.
+         */
+        activeRequests: {
+          type: Number,
+          value: 0,
+          notify: true,
+          readOnly: true,
+        },
+&nbsp;
+        /**
+         * If true, documents changed by the call will be reindexed synchronously server side.
+         */
+        syncIndexing: Boolean,
+&nbsp;
+        /**
+         * True while requests are in flight.
+         */
+        loading: {
+          type: Boolean,
+          notify: true,
+          readOnly: true,
+        },
+&nbsp;
+        /**
+         * If true, execute the operation asynchronously.
+         */
+        async: {
+          type: Boolean,
+          value: false,
+        },
+&nbsp;
+        /**
+         * Poll interval in ms.
+         */
+        pollInterval: {
+          type: Number,
+          value: 1000,
+        },
+      };
+    }
+&nbsp;
+    static get observers() {
+      return [
+        '_autoExecute(op, params, enrichers, enrichersEntity)',
+        '_isLoading(activeRequests)',
+      ];
+    }
+&nbsp;
+    /**
+     * Fired when the operation returns with no errors.
+     *
+     * @event response
+     */
+    execute() {
+      this._setActiveRequests(this.activeRequests + 1);
+&nbsp;
+      const params = (!this.params || (typeof this.params === 'object')) ? this.params : <span class="branch-1 cbranch-no" title="branch not covered" >JSON.parse(this.params);</span>
+&nbsp;
+      let {input} = this;
+&nbsp;
+      // support page provider as input to operations
+      // relies on parameters naming convention until provider marshaller is available
+      if (input instanceof Nuxeo.PageProvider) {
+        params.providerName = input.provider;
+        Object.assign(params, input._params);
+        input = undefined;
+      }
+&nbsp;
+      const options = {};
+      // Look up document schemas to be returned
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.schemas &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.schemas.length &gt; 1)</span> {
+<span class="cstat-no" title="statement not covered" >        options.schemas = this.schemas.trim().split(/[\s,]+/);</span>
+      }
+      options.headers = this.headers || {};
+      // Force sync indexing
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.syncIndexing) {
+<span class="cstat-no" title="statement not covered" >        options.headers.nx_es_sync = true;</span>
+      }
+      // Look up content enrichers parameter
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (this.enrichers) {
+        let enrich = {};
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof this.enrichers === 'string') {
+<span class="cstat-no" title="statement not covered" >          enrich[this.enrichersEntity] = this.enrichers;</span>
+        } else {
+          enrich = this.enrichers;
+        }
+        Object.entries(enrich).forEach(<span class="fstat-no" title="function not covered" >([</span>type, value]) =&gt; {
+          let v = <span class="cstat-no" title="statement not covered" >value;</span>
+<span class="cstat-no" title="statement not covered" >          if (Array.isArray(value)) {</span>
+<span class="cstat-no" title="statement not covered" >            v = value.join(',');</span>
+          }
+<span class="cstat-no" title="statement not covered" >          options.headers[`enrichers-${type}`] = v;</span>
+        });
+      }
+      return this.$.nx.operation(this.op).then((operation) =&gt; {
+        this._operation = operation;
+        return this._doExecute(input, params, options);
+      });
+    }
+&nbsp;
+    _autoExecute() {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.auto) {
+<span class="cstat-no" title="statement not covered" >        this.execute();</span>
+      }
+    }
+&nbsp;
+    _doExecute(input, params, options) {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (params.context) {
+<span class="cstat-no" title="statement not covered" >        this._operation = this._operation.context(params.context);</span>
+      }
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.async) {
+<span class="cstat-no" title="statement not covered" >        options.url = `${this._operation._computeRequestURL()}/@async`;</span>
+<span class="cstat-no" title="statement not covered" >        options.resolveWithFullResponse = true;</span>
+      }
+&nbsp;
+      let promise = this._operation
+        .params(params)
+        .input(input)
+        .execute(options);
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (this.async) {
+<span class="cstat-no" title="statement not covered" >        promise = promise.then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          if (res.status === 202) {</span>
+<span class="cstat-no" title="statement not covered" >            this.dispatchEvent(new CustomEvent('poll-start', {</span>
+              bubbles: true,
+              composed: true,
+            }));
+<span class="cstat-no" title="statement not covered" >            return this._poll(res.headers.get('location'));</span>
+          }
+<span class="cstat-no" title="statement not covered" >          return res;</span>
+        });
+      }
+&nbsp;
+      return promise
+        .then((data) =&gt; {
+          this.dispatchEvent(new CustomEvent('response', {
+            bubbles: true,
+            composed: true,
+            detail: {
+              response: data,
+            },
+          }));
+          this.response = data;
+          this.success = true;
+          this._setActiveRequests(this.activeRequests - 1);
+          return this.response;
+        })
+        .catch((error) =&gt; {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if (error.response.status === 401) {
+<span class="cstat-no" title="statement not covered" >            this.dispatchEvent(new CustomEvent('unauthorized-request', {</span>
+              bubbles: true,
+              composed: true,
+              detail: error,
+            }));
+          }
+          this.success = false;
+          this.error = error;
+          console.log(`Operation request failed: ${error}`);
+          this._setActiveRequests(this.activeRequests - 1);
+          throw error;
+        });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _p</span>oll(url) {
+<span class="cstat-no" title="statement not covered" >      return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; {</span>
+        const fn = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          this.$.nx.http(url).then(<span class="fstat-no" title="function not covered" >(r</span>es) =&gt; {</span>
+            // 303 - see other (for result)
+<span class="cstat-no" title="statement not covered" >            if (res.redirected) {</span>
+<span class="cstat-no" title="statement not covered" >              resolve(res);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >              window.setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >fn(),</span> this.pollInterval, url);</span>
+            }
+          });
+        };
+<span class="cstat-no" title="statement not covered" >        fn();</span>
+      });
+    }
+&nbsp;
+    _isLoading() {
+      this._setLoading(this.activeRequests &gt; 0);
+    }
+  }
+&nbsp;
+  customElements.define(Operation.is, Operation);
+  Nuxeo.Operation = Operation;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:07:57 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

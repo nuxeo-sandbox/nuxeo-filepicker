@@ -1,0 +1,67 @@
+{
+  "_from": "@nuxeo/paper-typeahead@^0.6.0-SNAPSHOT",
+  "_id": "@nuxeo/paper-typeahead@0.6.0-SNAPSHOT",
+  "_inBundle": false,
+  "_integrity": "sha512-W/k6OGIFDtv/GMiKWkiGP8A3iA8lGVOV2W2LpRw9Ttjw2t9e33Mp9Bpj6OTTOwcAE66YJJUsUDK3Nd5hnylMbQ==",
+  "_location": "/@nuxeo/paper-typeahead",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@nuxeo/paper-typeahead@^0.6.0-SNAPSHOT",
+    "name": "@nuxeo/paper-typeahead",
+    "escapedName": "@nuxeo%2fpaper-typeahead",
+    "scope": "@nuxeo",
+    "rawSpec": "^0.6.0-SNAPSHOT",
+    "saveSpec": null,
+    "fetchSpec": "^0.6.0-SNAPSHOT"
+  },
+  "_requiredBy": [
+    "/@nuxeo/nuxeo-ui-elements"
+  ],
+  "_resolved": "https://mavenin.nuxeo.com/nexus3/repository/npmjs-nuxeo/@nuxeo/paper-typeahead/-/paper-typeahead-0.6.0-SNAPSHOT.tgz",
+  "_shasum": "42084e7b04ec8356038893f428a646bb3cdf768c",
+  "_spec": "@nuxeo/paper-typeahead@^0.6.0-SNAPSHOT",
+  "_where": "/Users/vpasquier/nuxeo/nuxeo-sitecore/node_modules/@nuxeo/nuxeo-ui-elements",
+  "bugs": {
+    "url": "https://github.com/nuxeo/paper-typeahead/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-a11y-keys-behavior": "^3.0.0",
+    "@polymer/iron-behaviors": "^3.0.0",
+    "@polymer/iron-form-element-behavior": "^3.0.0",
+    "@polymer/iron-menu-behavior": "^3.0.0",
+    "@polymer/iron-selector": "^3.0.0",
+    "@polymer/paper-input": "^3.0.0",
+    "@polymer/paper-item": "^3.0.0",
+    "@polymer/paper-material": "^3.0.0",
+    "@polymer/paper-styles": "^3.0.0",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "[Demo](http://samccone.github.io/paper-typeahead/components/paper-typeahead/demo/) [Docs](http://samccone.github.io/paper-typeahead/components/paper-typeahead/)",
+  "devDependencies": {
+    "@polymer/iron-ajax": "^3.0.0",
+    "@polymer/iron-component-page": "^4.0.0",
+    "jscs": "^2.2.1",
+    "polyserve": "^0.5.0"
+  },
+  "homepage": "https://github.com/nuxeo/paper-typeahead#readme",
+  "main": "paper-typeahead.js",
+  "name": "@nuxeo/paper-typeahead",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxeo/paper-typeahead.git"
+  },
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "scripts": {
+    "test": "jscs *.js"
+  },
+  "version": "0.6.0-SNAPSHOT"
+}

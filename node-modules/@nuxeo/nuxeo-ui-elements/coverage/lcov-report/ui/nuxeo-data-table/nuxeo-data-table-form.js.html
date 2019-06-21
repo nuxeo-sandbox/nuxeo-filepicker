@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-data-table/nuxeo-data-table-form.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">ui/nuxeo-data-table</a> nuxeo-data-table-form.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.53% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.53% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* Part of `nuxeo-data-table` */
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/iron-form/iron-form.js';
+import '@nuxeo/nuxeo-elements/nuxeo-element.js';
+import '@polymer/paper-button/paper-button.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { dom } from '@polymer/polymer/lib/legacy/polymer.dom.js';
+import { mixinBehaviors } from '@polymer/polymer/lib/legacy/class.js';
+import { Templatizer } from '@polymer/polymer/lib/legacy/templatizer-behavior.js';
+import { I18nBehavior } from '../nuxeo-i18n-behavior.js';
+&nbsp;
+{
+  class DataTableForm extends mixinBehaviors([Templatizer, I18nBehavior], Nuxeo.Element) {
+<span class="fstat-no" title="function not covered" >    st</span>atic get template() {
+<span class="cstat-no" title="statement not covered" >      return html`</span>
+    &lt;style&gt;
+      #container {
+        margin: 24px;
+      }
+    &lt;/style&gt;
+    &lt;iron-form id="editForm"&gt;
+      &lt;form&gt;
+        &lt;div id="container"&gt;&lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/iron-form&gt;
+`;
+    }
+&nbsp;
+    static get is() {
+      return 'nuxeo-data-table-form';
+    }
+&nbsp;
+    static get properties() {
+      return {
+        item: {
+          type: Object,
+          notify: true,
+          observer: '_itemChanged',
+        },
+        slot: {
+          value: 'form',
+          type: String,
+          reflectToAttribute: true,
+          readonly: true,
+        },
+        index: Number,
+      };
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    re</span>ady() {
+<span class="cstat-no" title="statement not covered" >      super.ready();</span>
+      const template = <span class="cstat-no" title="statement not covered" >this.queryEffectiveChildren('template');</span>
+      // custom notification for the `item` property
+<span class="cstat-no" title="statement not covered" >      this._instanceProps = { item: true };</span>
+<span class="cstat-no" title="statement not covered" >      this.templatize(template);</span>
+<span class="cstat-no" title="statement not covered" >      this.instance = this.stamp({ item: this.item });</span>
+<span class="cstat-no" title="statement not covered" >      this.instance.dispatchEvent = <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
+      };
+<span class="cstat-no" title="statement not covered" >      dom(this.$.container).appendChild(this.instance.root);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    va</span>lidateItem() {
+<span class="cstat-no" title="statement not covered" >      return this.$.editForm.validate();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _i</span>temChanged() {
+<span class="cstat-no" title="statement not covered" >      if (this.instance) {</span>
+<span class="cstat-no" title="statement not covered" >        this.instance.item = this.item;</span>
+<span class="cstat-no" title="statement not covered" >        this.instance.i18n = this.i18n;</span>
+      }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    _n</span>otifyInstancePropV2(inst, prop, value) {
+<span class="cstat-no" title="statement not covered" >      this.notifyPath(prop, value);</span>
+    }
+  }
+&nbsp;
+  customElements.define(DataTableForm.is, DataTableForm);
+  Nuxeo.DataTableForm = DataTableForm;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ui/nuxeo-format-behavior.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">ui</a> nuxeo-format-behavior.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+@license
+(C) Copyright Nuxeo Corp. (http://nuxeo.com/)
+&nbsp;
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+&nbsp;
+    http://www.apache.org/licenses/LICENSE-2.0
+&nbsp;
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+import moment from 'moment';
+&nbsp;
+import { I18nBehavior } from './nuxeo-i18n-behavior.js';
+&nbsp;
+/**
+ * `Nuxeo.FormatBehavior` provides a set of helpers to format values.
+ *
+ * @polymerBehavior
+ */
+export const FormatBehavior = [I18nBehavior, {
+&nbsp;
+  /**
+   * Formats a size given in bytes in MB, KB, or bytes.
+   */
+  formatSize(size) {
+<span class="cstat-no" title="statement not covered" >    if (!size || size &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      return '';</span>
+    } else <span class="cstat-no" title="statement not covered" >if (size &gt; 1048576) {</span>
+<span class="cstat-no" title="statement not covered" >      return `${parseFloat(size / 1048576).toFixed(2)} MB`;</span>
+    } else <span class="cstat-no" title="statement not covered" >if (size &gt; 1024) {</span>
+<span class="cstat-no" title="statement not covered" >      return `${parseFloat(size / 1024).toFixed(2)} KB`;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return `${size.toString()} Bytes`;</span>
+    }
+  },
+&nbsp;
+  _formatDate(date, fmt) {
+<span class="cstat-no" title="statement not covered" >    if (!date) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >    moment.locale(this._languageCode());</span>
+<span class="cstat-no" title="statement not covered" >    if (fmt &amp;&amp; fmt === 'relative') {</span>
+<span class="cstat-no" title="statement not covered" >      return moment().to(date);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return moment(date).format(fmt);</span>
+  },
+&nbsp;
+  /**
+   * Formats a date as a string. Default format is 'MMM D, YYYY'.
+   * Use format "relative" to show date relative to current time
+   *
+   * @param {string} date the date
+   * @param {string} format the format, falls back on Nuxeo.UI.config.dateFormat or 'MMM D, YYYY' if null.
+   */
+  formatDate(date, format) {
+<span class="cstat-no" title="statement not covered" >    return this._formatDate(date, format ||</span>
+      (Nuxeo.UI &amp;&amp; Nuxeo.UI.config &amp;&amp; Nuxeo.UI.config.dateFormat) ||
+      'LL');
+  },
+&nbsp;
+  /**
+   * Formats a date time as a string. Default format is 'MMMM D, YYYY HH:mm'.
+   * Use format "relative" to show date relative to current time
+   *
+   * @param {string} date the date
+   * @param {string} format the format, falls back on Nuxeo.UI.config.dateFormat or 'MMMM D, YYYY HH:mm' if null.
+   */
+  formatDateTime(date, format) {
+<span class="cstat-no" title="statement not covered" >    return this._formatDate(date, format ||</span>
+      (Nuxeo.UI &amp;&amp; Nuxeo.UI.config &amp;&amp; Nuxeo.UI.config.dateTimeFormat) ||
+      'LLL');
+  },
+&nbsp;
+  /**
+   * Returns the translated mimetype. Message key is 'mimetype.&lt;value&gt;'.
+   */
+  formatMimeType(value) {
+<span class="cstat-no" title="statement not covered" >    if (!value) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >    return this.i18n(`mimetype.${value}`);</span>
+  },
+&nbsp;
+  /**
+   * Returns the translated rendition name.
+   */
+  formatRendition(value) {
+<span class="cstat-no" title="statement not covered" >    if (!value) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >    return this.i18n(`exportButton.${value}`);</span>
+  },
+&nbsp;
+  /**
+   * Returns the version of a document as &lt;major&gt;.&lt;minor&gt;.
+   */
+  formatVersion(doc) {
+<span class="cstat-no" title="statement not covered" >    if (doc &amp;&amp; doc.properties</span>
+        &amp;&amp; doc.properties['uid:major_version'] !== undefined &amp;&amp; doc.properties['uid:minor_version'] !== undefined) {
+<span class="cstat-no" title="statement not covered" >      return `${doc.properties['uid:major_version']}.${doc.properties['uid:minor_version']}`;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return '';</span>
+    }
+  },
+&nbsp;
+  /**
+   * Returns the label for the given directory entry.
+   */
+  formatDirectory(value, separator) {
+<span class="cstat-no" title="statement not covered" >    if (value &amp;&amp; value['entity-type'] &amp;&amp; value['entity-type'] === 'directoryEntry') {</span>
+<span class="cstat-no" title="statement not covered" >      if (value.properties &amp;&amp; value.properties.label) {</span>
+<span class="cstat-no" title="statement not covered" >        return this._absoluteDirectoryPath(value, 'label', separator || '/');</span>
+      } else {
+        const label = <span class="cstat-no" title="statement not covered" >`label_${this._languageCode()}`;</span>
+<span class="cstat-no" title="statement not covered" >        return this._absoluteDirectoryPath(value, label || 'label_en', separator || '/');</span>
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      return value;</span>
+    }
+  },
+&nbsp;
+  _absoluteDirectoryPath(entry, labelField, separator, subPath) {
+    const parent = <span class="cstat-no" title="statement not covered" >entry.properties.parent;</span>
+    let tmp = <span class="cstat-no" title="statement not covered" >entry.properties[labelField];</span>
+<span class="cstat-no" title="statement not covered" >    if (subPath) {</span>
+<span class="cstat-no" title="statement not covered" >      tmp += separator + subPath;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (parent &amp;&amp; parent['entity-type'] &amp;&amp; parent['entity-type'] === 'directoryEntry') {</span>
+<span class="cstat-no" title="statement not covered" >      return this._absoluteDirectoryPath(parent, labelField, separator, tmp);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return tmp;</span>
+    }
+  },
+&nbsp;
+  /**
+   * Returns the label for the given document type.
+   */
+  formatDocType(type) {
+<span class="cstat-no" title="statement not covered" >    if (!type) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+    const key = <span class="cstat-no" title="statement not covered" >`label.document.type.${type.toLowerCase()}`;</span>
+    const value = <span class="cstat-no" title="statement not covered" >this.i18n(key);</span>
+<span class="cstat-no" title="statement not covered" >    return value === key ? type : value;</span>
+  },
+&nbsp;
+  /**
+   * Returns the label for the given lifecycle state.
+   */
+  formatLifecycleState(state) {
+    const t = <span class="cstat-no" title="statement not covered" >this.i18n(`label.ui.state.${state}`);</span>
+<span class="cstat-no" title="statement not covered" >    return t === `label.ui.state.${state}` ? state : t;</span>
+  },
+&nbsp;
+  /**
+   * Returns sanitized fulltext
+   */
+  formatFulltext(text) {
+<span class="cstat-no" title="statement not covered" >    return text.replace(/-/g, ' ');</span>
+  },
+&nbsp;
+  _languageCode() {
+<span class="cstat-no" title="statement not covered" >    return ((window.nuxeo.I18n.language) ? window.nuxeo.I18n.language.split('-')[0] : 'en');</span>
+  },
+&nbsp;
+  /**
+   * Formats a xpath string by doing replacements according to a given RegEx.
+   * The default behaviour is to replace all '/' by '.'.
+   *
+   * @param {string} xpath the property xpath
+   * @param {string} regex the RegEx to transform the xpath. If not provided it will fallback to the default behaviour.
+   */
+  formatPropertyXpath(xpath, regex) {
+<span class="cstat-no" title="statement not covered" >    return xpath.replace(regex || /\//g, '.');</span>
+  },
+&nbsp;
+  /**
+   * Escapes a RegExp string by replacing expression's special characters.
+   *
+   * @param {string} text the RegExp to be escaped
+   */
+  escapeRegExp(text) {
+<span class="cstat-no" title="statement not covered" >    return text &amp;&amp; text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&amp;');</span>
+  },
+&nbsp;
+}];
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 12 2019 13:09:44 GMT+0000 (Coordinated Universal Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

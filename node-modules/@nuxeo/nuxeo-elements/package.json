@@ -1,0 +1,84 @@
+{
+  "_from": "@nuxeo/nuxeo-elements@^3.0.0-SNAPSHOT",
+  "_id": "@nuxeo/nuxeo-elements@3.0.0-SNAPSHOT",
+  "_inBundle": false,
+  "_integrity": "sha512-O4eH3/EAVVJXXKXI5e4rQDaFbT7d2MObA0Mc/HP9jARUpB4zOIfrddYpnu13lH1gRL9VmVr5Fitb1vSaUTa3DQ==",
+  "_location": "/@nuxeo/nuxeo-elements",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@nuxeo/nuxeo-elements@^3.0.0-SNAPSHOT",
+    "name": "@nuxeo/nuxeo-elements",
+    "escapedName": "@nuxeo%2fnuxeo-elements",
+    "scope": "@nuxeo",
+    "rawSpec": "^3.0.0-SNAPSHOT",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-SNAPSHOT"
+  },
+  "_requiredBy": [
+    "/",
+    "/@nuxeo/nuxeo-ui-elements"
+  ],
+  "_resolved": "https://mavenin.nuxeo.com/nexus3/repository/npmjs-nuxeo/@nuxeo/nuxeo-elements/-/nuxeo-elements-3.0.0-SNAPSHOT.tgz",
+  "_shasum": "8986faa5613dc8e7e4e6386524f3e94f9047f177",
+  "_spec": "@nuxeo/nuxeo-elements@^3.0.0-SNAPSHOT",
+  "_where": "/Users/vpasquier/nuxeo/nuxeo-sitecore",
+  "author": {
+    "name": "Nuxeo"
+  },
+  "bugs": {
+    "url": "https://github.com/nuxeo/nuxeo-elements/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "nuxeo": "^3.2.1"
+  },
+  "deprecated": false,
+  "description": "Nuxeo Web Components",
+  "devDependencies": {
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/test-fixture": "^4.0.0",
+    "coveralls": "^3.0.2",
+    "es6-promise": "^4.0.0",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-import": "^2.8.0",
+    "lint-staged": "^8.1.3",
+    "polymer-cli": "^1.8.0",
+    "wct-browser-legacy": "^1.0.1",
+    "wct-istanbul": "^0.14.3"
+  },
+  "homepage": "https://github.com/nuxeo/nuxeo-elements#readme",
+  "keywords": [
+    "nuxeo",
+    "web-components",
+    "polymer"
+  ],
+  "license": "Apache 2.0",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "main": "nuxeo-elements.js",
+  "name": "@nuxeo/nuxeo-elements",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxeo/nuxeo-elements.git"
+  },
+  "scripts": {
+    "coveralls": "cat coverage/lcov.info | coveralls",
+    "docs": "polymer analyze > analysis.json && polymer serve",
+    "eslint": "eslint *.js *.html demo/**/*.html test/**/*.html",
+    "lint": "npm run eslint && npm run polylint",
+    "polylint": "polymer lint",
+    "precommit": "lint-staged",
+    "test": "polymer test --npm --simpleOutput --expanded -l chrome,firefox"
+  },
+  "version": "3.0.0-SNAPSHOT"
+}
