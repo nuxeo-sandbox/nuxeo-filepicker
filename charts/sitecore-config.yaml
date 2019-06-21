@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sitecore-config
+type: Opaque
+data:
+  jwt.secret: XXXXXXX

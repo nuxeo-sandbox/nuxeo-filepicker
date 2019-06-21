@@ -1,0 +1,49 @@
+
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    exposer: Ingress
+    http: true
+    tlsacme: false
+
+cleanup:
+  Args:
+    - --cleanup
+  Annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: hook-succeeded
+
+nuxeo:
+  fullnameOverride: preview
+  nuxeo:
+    image:
+      repository: "nuxeo/nuxeo"
+      tag: "10.10"
+      pullPolicy: IfNotPresent
+    packages: nuxeo-web-ui
+    custom_params: |-
+      # ASPERA
+      nuxeo.jwt.secret=${env:JWT_SECRET}
+    custom_envs:
+      - name: NUXEO_CLID
+        valueFrom:
+          secretKeyRef:
+            name: instance-clid
+            key: CLID
+      - name: JWT_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: sitecore-config
+            key: jwt.secret
+      - name: NUXEO_DEV_MODE
+        value: "true"
+    livenessProbe:
+      initialDelaySeconds: 200
+    readinessProbe:
+      initialDelaySeconds: 200
+  mongodb:
+    deploy: false
+  postgresql:
+    deploy: false
