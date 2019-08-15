@@ -116,7 +116,7 @@ class NuxeoFilepicker extends LitElement {
                   ? html`
                       <nuxeo-data-table
                         doc="${JSON.stringify(doc)}"
-                        items="${JSON.stringify(doc.contextParameters.renditions)}"
+                        items="${JSON.stringify(this._filteredRendtions(doc.contextParameters.renditions))}"
                         selection-enabled
                         max-items="15"
                         paginable
@@ -158,6 +158,10 @@ class NuxeoFilepicker extends LitElement {
         <paper-button raised @click="${this._displayRenditions}">Import Selection(s)</paper-button>
       </div>
     `;
+  }
+
+  _filteredRendtions(renditions) {
+    return renditions.filter(rendition => !['xmlExport', 'zipExport'].includes(rendition.name));
   }
 
   _previous() {
